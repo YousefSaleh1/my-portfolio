@@ -5,6 +5,7 @@ import Project from './pages/Project/Project';
 import Login from './pages/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 function App() {
   /* 
     this function handle swapings between light and dark mode 
@@ -17,6 +18,7 @@ function App() {
   }
   return (
     <>
+    
       <Navbar />
       <div className="test-dark-mode">
         <button className="test-button" onClick={toggleDarkMode}>Dark Mode</button>
