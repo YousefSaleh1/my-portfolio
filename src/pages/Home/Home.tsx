@@ -1,10 +1,13 @@
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import './Home.css';
 
 function Home() {
-  return (
+  return (<>
     <div className='home-page'>
       home
     </div>
+    <ProjectCard></ProjectCard>
+    </>
   )
 }
 
