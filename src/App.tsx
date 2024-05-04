@@ -18,6 +18,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Project />
       <div className="test-dark-mode">
         <button className="test-button" onClick={toggleDarkMode}>Dark Mode</button>
       </div>
