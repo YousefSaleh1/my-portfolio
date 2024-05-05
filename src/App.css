@@ -66,4 +66,7 @@ button.test-button{
   #ys-container {
     max-width: 1150px;
   }
+.container{
+  overflow-x: hidden !important;
+}
 }

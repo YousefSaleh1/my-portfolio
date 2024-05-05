@@ -36,3 +36,11 @@
     --active-color-nav: #197de1;
     --active-color-hover-nav: #2b8ae8
   }
+  .slick-slide{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider-img img{
+  width: 150px !important;
+}

@@ -36,3 +36,94 @@
     --active-color-nav: #197de1;
     --active-color-hover-nav: #2b8ae8
   }
+
+  .projectcard .card  {
+    border-radius: 4% ;
+    transition: all .3s;
+  }
+
+  .projectcard .card:hover{
+    scale: 1.03;
+    box-shadow: 0 0 10px var( --skills-gradient);
+  }
+
+  .projectcard .card .card-body .card-date{
+    padding: 2px;
+    color: var(--secondary);
+    font-size: 0.8rem;
+    text-align: center;
+    border: 1px solid var(--placeholder-color);
+    border-radius: 8%;
+    transition: all .3s;
+  }
+
+  .projectcard .card .row-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2px;
+    border-bottom: 1px solid ;
+    border-color: var(--svg-color);
+  }
+
+  .projectcard .card .row-title .link{
+    filter: grayscale(100%);
+    width: 30px;
+    height: 30px;
+    padding: 3px 5px 5px;
+    margin: 4px;
+    border: 1px solid var(--svg-color);
+    border-radius: 8%;
+  }
+  
+  .projectcard .card .card-info{
+    padding-bottom: 2px;
+    border-bottom: 1px solid ;
+    border-color: var(--svg-color);
+  }
+
+  .projectcard .card .card-footer{
+    display: flex;
+  }
+
+  .projectcard .card .card-footer .skill{
+    filter: grayscale(100%);
+    width: 30px;
+    padding: 3px 5px 5px;
+    margin: 4px;
+    border: 1px solid var(--svg-color);
+    border-radius: 8%;
+  }
+  
+  .projectcard .card .card-footer img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+
+  .projectcard .card .card-footer .hide {
+    display: none;
+  }
+
+  .projectcard a:hover {
+    border: 2px solid var(--secondary);
+    scale: 1.3;
+  }
+
+  .projectcard .card .card-footer .skill:hover  .hide{ 
+    filter: none;
+    display: block;
+  }
+
+  .projectcard span{
+    width: 200px;
+    height: 100px;
+    background-color: rgb(117, 37, 37);
+  }
+
+ 
+
+
+
+
+

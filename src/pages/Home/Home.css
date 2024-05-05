@@ -1,8 +1,9 @@
 :root {
-  --font-name-family : 'Dancing Script',cursive ;
-  --font-medium-xx-size : 1.25rem;
-  --font-medium-x-size : 1.125rem;
-  --font-medium-size : 1rem;
+  --font-name-family: "Dancing Script", cursive;
+  --font-title-section-size: 2.8125rem;
+  --font-medium-xx-size: 1.25rem;
+  --font-medium-x-size: 1.125rem;
+  --font-medium-size: 1rem;
   --black: #0e0f13;
   --skills-gradient: #00000099;
   --input-form-color: #212529;
@@ -20,6 +21,7 @@
   --active-color-nav: #3b82f6;
   --active-color-hover-nav: #5ba8e8;
 }
+
 .dark-mode {
   --white: #0e0f13;
   --primary: #343a40;
@@ -34,6 +36,160 @@
   --svg-color: #8e98a1;
   --active-color: #2c3237;
   --active-color-nav: #197de1;
-  --active-color-hover-nav: #2b8ae8
+  --active-color-hover-nav: #2b8ae8;
 }
 
+.home-page {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.home-page .section-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.home-page .section-title h1 {
+  font-size: var(--font-title-section-size) !important;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+
+#education-training-section .certificate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 5%;
+}
+
+#education-training-section .education-elements-container .title-with-line ,
+#education-training-section .training-container .title-with-line ,
+#skilles-section .title-with-line {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main-shadow);
+}
+#education-training-section .education-elements-container .title-with-line h2,
+#education-training-section .training-container .title-with-line h2 ,
+#skilles-section .title-with-line h2{
+  padding: 5px 15px;
+}
+
+
+.home-page .before-line{
+  background-color: var(--main-shadow);
+  width: 10%;
+  height: 1px;
+}
+.home-page .after-line{
+  background-color: var(--main-shadow);
+  flex: 1 0 10%;
+  height: 1px;
+}
+
+
+#education-training-section .certificate-description p {
+  font-family: "motserat";
+  margin-bottom: 30px;
+}
+
+#education-training-section .certificate-title {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+#education-training-section .tarinig-company h4,
+#education-training-section .trainig-description p {
+  font-family: "motserat";
+}
+
+#education-training-section .certificate-links a {
+  text-decoration: none;
+  color: var(--active-color-nav);
+}
+
+#education-training-section .trainig-element {
+  border: 1px solid var(--overview-layer);
+  border-right: 0;
+  border-radius: 30px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+#education-training-section .trainig-element:hover{
+  background-image: linear-gradient(to right , var(--active-color) ,transparent );
+  background-size: 200% 200%;
+  animation: gradient 5s linear;
+}
+
+@keyframes gradient {
+  0% {background-position: 100% 0%;}
+  100% {background-position: 0% 0%;}
+
+}
+
+#education-training-section .company-logo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#education-training-section .company-logo img {
+  border-radius: 10px;
+  width: 90%;
+  height: 100%;
+  object-fit: fill;
+}
+
+@media (max-width: 767px) {
+  html{
+    
+    font-size:12px ;
+  }
+  .home-page{
+    padding: 0 30px;
+  }
+
+  .home-page  .section-title h1 {
+    font-size: 28px !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+   .title-with-line h2 {
+    font-size: 17px !important;
+  }
+
+  #skilles-section .skilles-tag .row{
+    display: flex;
+    justify-content: center;
+  }
+  #education-training-section .trainig-element{
+    padding: 15px;
+  }
+  #education-training-section .certificate-image img {
+    margin-bottom: 30px;
+  }
+  #education-training-section .company-logo{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  #education-training-section .company-logo img {
+    border-radius: 10px;
+    object-fit: fill;
+  }
+}
+
+@media (max-width: 428px) {
+  .home-page  .section-title h1 {
+    font-size: 24px !important;
+  }
+}
+@media (max-width: 390px) {
+  .home-page #education-training-section .section-title h1 {
+    font-size: 20px !important;
+  }
+}
