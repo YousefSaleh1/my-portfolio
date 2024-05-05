@@ -1,0 +1,43 @@
+.container {
+    /* width: 80%; */
+    margin: auto;
+    overflow-x: hidden;
+}
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 32px;
+    margin-left: 80px;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 275px;
+    bottom: 30%;
+    height: 2px;
+    width: 1500px;
+    background-color: #000;
+}
+.section-title::before {
+    content: "";
+    position: absolute;
+    left: -105px;
+    bottom: 30%;
+    height: 2px;
+    width: 95px;
+    background-color: #000;
+}
+.certificate {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.certificate-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.certificate-description {
+    margin-top: 10px;
+}
