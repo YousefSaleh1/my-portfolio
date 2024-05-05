@@ -21,6 +21,7 @@ function Home() {
         <div className="container">
           <div className="section-title">
             <h1>Skills</h1>
+            
           </div>
           <div className="skilles-tag">
             <div className="title-with-line">
