@@ -36,3 +36,46 @@
     --active-color-nav: #197de1;
     --active-color-hover-nav: #2b8ae8
   }
+
+  body{
+    background-color: var(--black);
+  }
+  .contact-form {
+    background-color: var(--black);
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+   
+}
+
+  .contact-form h1{
+    color: var(--white);
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 900;
+  }
+  .contact-form form{
+    background-color: var(--black);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    float: right;
+    margin-right: 4rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+  }
+  .contact-form input, textarea {
+   background-color: var(--input-form-color);
+   color: var(--placeholder-color);
+   padding: 0 1rem;
+   margin-bottom: 1rem;
+   border: solid #0e0f13;
+   border-radius: 0.5rem;
+}
+
+.contact-form button{
+ background-color: var(--placeholder-color);
+ 
+}

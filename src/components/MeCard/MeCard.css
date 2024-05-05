@@ -1,0 +1,8 @@
+.cards {
+  max-width: 23vw;
+  width: 23vw;
+  height: 54vh;
+}
+.colom .cards:hover {
+  box-shadow: 0 0 10px grey;
+}

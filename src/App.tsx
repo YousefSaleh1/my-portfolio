@@ -4,10 +4,9 @@ import Home from './pages/Home/Home';
 import Project from './pages/Project/Project';
 import Login from './pages/Login/Login';
 import Navbar from './components/Navbar/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
 
   /* 
@@ -21,7 +20,10 @@ function App() {
   }
   return (
     <>
-    <Navbar />
+
+    
+      <Navbar />
+
       <div className="test-dark-mode">
         <button className="test-button" onClick={toggleDarkMode}>Dark Mode</button>
       </div>
