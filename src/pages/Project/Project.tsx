@@ -7,17 +7,8 @@ import CSSImage from './../../assets/css.svg'
 import TypeScriptImage from './../../assets/typescript.svg'
 import BootstrapImage from './../../assets/bootstrap.svg'
 import AngularImage from './../../assets/angular.svg'
-import { useState } from 'react'
 
 function Project() {
-
-  const [showSlider, setShowSlider] = useState(false);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-  const openSlider = (index: number) => {
-    setSelectedImageIndex(index);
-    setShowSlider(true);
-  };
 
   const project = {
     title: 'Fresh Cart',
@@ -48,6 +39,7 @@ function Project() {
       image: AngularImage,
     },
   ]
+
   const ProjectPhotos = [
     {
       photoLink: 'https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart1.png'
@@ -104,9 +96,9 @@ function Project() {
             </div>
             <div className="row">
               {ProjectPhotos.map((photo, index) => (
-                <div key={index} className="project-image col-lg-4 col-md-6 mb-3">
+                <div key={index} className="project-image col-lg-4 col-md-6 mb-3"  >
                   <div className="overview">
-                    <img src={photo.photoLink} alt="" onClick={() => openSlider(index)} />
+                    <img src={photo.photoLink} alt="" />
                     <div className="overview-layer"><FaEye /></div>
                   </div>
                 </div>
