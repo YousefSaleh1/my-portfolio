@@ -61,3 +61,7 @@ button.test-button{
   align-items: center;
   flex-direction: column;
 }
+
+.container{
+  overflow-x: hidden !important;
+}
