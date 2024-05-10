@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { HiCode } from "react-icons/hi";
 import "./Project.css";
 import { FaLink } from "react-icons/fa6";
@@ -84,6 +85,7 @@ function Project() {
                 </a>
                 <a href={project.demo_link} className="link">
                   <FaLink className="p-links-icon" />
+
                   <span className="p-link-info">Demo</span>
                 </a>
               </div>

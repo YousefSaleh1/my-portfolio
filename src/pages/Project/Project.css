@@ -12,7 +12,11 @@
   --overview-layer: #7e7c7c81;
   --white: #f3f4f6;
   --placeholder-color: #8e98a1;
+<<<<<<< HEAD
   --primary: #343a40;
+=======
+  --primary: #e1e1e1;
+>>>>>>> main
   --focus-color: #ced4da;
   --hover-color: #d1d1d1;
   --svg-color: #cfcfcfcc;
@@ -23,7 +27,11 @@
 
 .dark-mode {
   --white: #0e0f13;
+<<<<<<< HEAD
   --primary: #e1e1e1;
+=======
+  --primary: #343a40;
+>>>>>>> main
   --placeholder-color: #495057;
   --focus-color: #424242;
   --hover-color: #495057;
@@ -39,7 +47,11 @@
 }
 
 .project {
+<<<<<<< HEAD
   background-color: var(--white);
+=======
+  background-color: var(--black);
+>>>>>>> main
 }
 
 .project-section {
@@ -47,7 +59,11 @@
 }
 
 .project-section .project-title {
+<<<<<<< HEAD
   color: var(--black);
+=======
+  color: var(--white);
+>>>>>>> main
   font-size: 60px;
   text-align: center;
   font-weight: 900;
@@ -69,7 +85,11 @@
 .project-section .project-info .project-links .link {
   border: 1px solid var(--secondary);
   transition: all .2s;
+<<<<<<< HEAD
   color: var(--black) !important;
+=======
+  color: var(--primary) !important;
+>>>>>>> main
   border-radius: 50rem !important;
   padding: .25rem 1rem !important;
   margin-right: .5rem !important;
@@ -120,7 +140,11 @@
 }
 
 .project-section .project-info .project-technologies .technology-info .technology-name {
+<<<<<<< HEAD
   color: var(--black);
+=======
+  color: var(--primary);
+>>>>>>> main
   margin-left: .5rem;
 }
 
@@ -131,7 +155,11 @@
 }
 
 .project-section .project-desc p {
+<<<<<<< HEAD
   color: var(--black) !important;
+=======
+  color: var(--primary) !important;
+>>>>>>> main
 }
 
 .project-section .row .project-image {
