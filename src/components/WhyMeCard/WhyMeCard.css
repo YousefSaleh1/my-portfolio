@@ -36,3 +36,32 @@
     --active-color-nav: #197de1;
     --active-color-hover-nav: #2b8ae8
   }
+  #about-section .card-why{
+    padding: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 400px;
+    max-width: 370px;
+    border-radius: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--focus-color);
+    color: var(--black);
+  }
+  #about-section .card-why:hover{
+    transform: scale(1.1);
+    /* border: 2px; */
+  }
+  /* .card-text{
+    color: var();
+  } */
+  .card-why{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #about-section .card-why img{
+    width: 200px;
+    height: 200px;
+    
+  }

@@ -19,8 +19,9 @@
   --active-color: #bcbebf;
   --active-color-nav: #3b82f6;
   --active-color-hover-nav: #5ba8e8;
+  --border-bottom-color :#d7d4d4;
 }
-
+/* #d7d4d4 */
 .dark-mode {
   --white: #0e0f13;
   --primary: #343a40;
@@ -44,9 +45,9 @@
 }
 
 .ys-navbar {
-  background-color: var(--black);
-  border-bottom: 1px solid var(--secondary);
-  color: var(--primary);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-bottom-color);
+  color: var(--black);
   z-index: 3;
   font-weight: 500;
   top: 0;
@@ -75,7 +76,7 @@
 }
 
 .ys-navbar .nav-icon {
-  color: var(--primary) !important;
+  color: var(--black) !important;
   padding: 0.3125rem 0;
   margin-right: 1rem;
   font-size: var(--font-medium-xx-size);
@@ -96,7 +97,7 @@
 
 .ys-navbar .ys-toggler {
   display: none;
-  color: var(--primary) !important;
+  color: var(--black) !important;
   padding: .5rem !important;
   border: 0 !important;
   font-size: var(--font-medium-xx-size);
@@ -105,7 +106,7 @@
 }
 
 .ys-navbar .ys-toggler:hover {
-  background-color: var(--secondary);
+  background-color: var(--test-color);
   border-radius: 10px;
 }
 

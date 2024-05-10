@@ -37,85 +37,112 @@
     --active-color-hover-nav: #2b8ae8
   }
 
-  .projectcard .card  {
+  .project-card-component .card  {
     border-radius: 4% ;
     transition: all .3s;
+    background-color: var(--white);
+    padding: 24px;
+    border: 1px solid var(--focus-color);
+    margin-bottom: 30px;
+    
   }
-
-  .projectcard .card:hover{
+.card h5.card-title{
+  color: var(--black);
+  font-weight: bolder;
+}
+  .project-card-component .card:hover{
     scale: 1.03;
     box-shadow: 0 0 10px var( --skills-gradient);
-  }
 
-  .projectcard .card .card-body .card-date{
+  }
+  .project-card-component .card .card-body{
+    padding: 0;
+  }
+  .project-card-component .card .card-body .card-text{
+    color: var(--black);
+  }
+  .project-card-component .card .card-body .card-date{
     padding: 2px;
     color: var(--secondary);
-    font-size: 0.8rem;
+    opacity: 0.8;
+    font-size: 12px;
     text-align: center;
-    border: 1px solid var(--placeholder-color);
-    border-radius: 8%;
+    border: 1px solid #d7d4d4;
     transition: all .3s;
   }
 
-  .projectcard .card .row-title{
+  .project-card-component .card .row-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 2px;
-    border-bottom: 1px solid ;
-    border-color: var(--svg-color);
+    border-bottom: 1px solid #d7d4d4;
+    margin-bottom: 20px;
   }
 
-  .projectcard .card .row-title .link{
-    filter: grayscale(100%);
+  .project-card-component .card .row-title .card-link{
+    /* filter: grayscale(100%); */
+    color: var(--black);
     width: 30px;
     height: 30px;
-    padding: 3px 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 3px 5px 5px; */
     margin: 4px;
     border: 1px solid var(--svg-color);
     border-radius: 8%;
   }
   
-  .projectcard .card .card-info{
+  .project-card-component .card .card-info{
     padding-bottom: 2px;
     border-bottom: 1px solid ;
     border-color: var(--svg-color);
   }
 
-  .projectcard .card .card-footer{
+  .project-card-component .card .card-footer{
     display: flex;
+    padding: 15px 0;
+    background-color: transparent;
   }
 
-  .projectcard .card .card-footer .skill{
+  .project-card-component .card .card-footer .skill{
+    position: relative;
     filter: grayscale(100%);
-    width: 30px;
+    width: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 3px 5px 5px;
     margin: 4px;
     border: 1px solid var(--svg-color);
     border-radius: 8%;
   }
-  
-  .projectcard .card .card-footer img{
+  .project-card-component .card .card-footer .skill:hover{
+    filter: grayscale(0);
+  }
+  .project-card-component .card .card-footer img{
     width: 20px;
     height: 20px;
     object-fit: cover;
   }
 
-  .projectcard .card .card-footer .hide {
+  .project-card-component .card .card-footer .hide {
     display: none;
   }
 
-  .projectcard a:hover {
+  .project-card-component a:hover {
     border: 2px solid var(--secondary);
     scale: 1.3;
+    
   }
 
-  .projectcard .card .card-footer .skill:hover  .hide{ 
+  .project-card-component .card .card-footer .skill:hover  .hide{ 
     filter: none;
     display: block;
   }
 
-  .projectcard span{
+  .project-card-component span{
     width: 200px;
     height: 100px;
     background-color: rgb(117, 37, 37);
