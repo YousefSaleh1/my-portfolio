@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { HiCode } from "react-icons/hi";
 import "./Project.css";
 import { FaLink } from "react-icons/fa6";
