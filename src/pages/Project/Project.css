@@ -12,9 +12,8 @@
   --overview-layer: #7e7c7c81;
   --white: #f3f4f6;
   --placeholder-color: #8e98a1;
-  <<<<<<< HEAD --primary: #343a40;
-  =======--primary: #e1e1e1;
-  >>>>>>>main --focus-color: #ced4da;
+  --primary: #343a40;
+  --focus-color: #ced4da;
   --hover-color: #d1d1d1;
   --svg-color: #cfcfcfcc;
   --active-color: #bcbebf;
@@ -24,9 +23,8 @@
 
 .dark-mode {
   --white: #0e0f13;
-  <<<<<<< HEAD --primary: #e1e1e1;
-  =======--primary: #343a40;
-  >>>>>>>main --placeholder-color: #495057;
+  --primary: #e1e1e1;
+  --placeholder-color: #495057;
   --focus-color: #424242;
   --hover-color: #495057;
   --black: #f3f4f6;
@@ -41,9 +39,7 @@
 }
 
 .project {
-  <<<<<<< HEAD background-color: var(--white);
-  =======background-color: var(--black);
-  >>>>>>>main
+  background-color: var(--white);
 }
 
 .project-section {
