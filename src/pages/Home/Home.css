@@ -185,7 +185,9 @@
   height: 1px;
 }
 
-
+#education-training-section .education-body{
+  margin-top: 25px;
+}
 #education-training-section .certificate-description p {
   font-family: "motserat";
   margin-bottom: 30px;
