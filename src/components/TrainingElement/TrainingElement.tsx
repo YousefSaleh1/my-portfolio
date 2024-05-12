@@ -1,47 +1,76 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import focal_logo from "./../../assets/focal_logo.jfif";
-type Ttraining ={
-    title : string ,
-    company_name : string ,
-    description : string ,
-    certif_link : string ,
-    recomen_link : string ,
-    logo_url: string ,
+
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+type TTraining = {
+  id: number;
+  training_name: string;
+  company_name: string;
+  description: string;
+  company_logo: string;
+  company_link: string;
+  certificate_link: string;
+  recomendation_letter_link: string;
 }
-function TrainingElement({title , company_name, description,certif_link,recomen_link,logo_url}: Ttraining) {
+
+function TrainingElement() {
+  const [trainingData, setTrainingData] = useState<TTraining[]>([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/trainings", {
+        headers: {
+          Accept: "application/json"
+        }
+      })
+      .then((response) => {
+        setTrainingData(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
-    <div className="trainig-element">
-      <div className="row">
-        <div className="col-md-9">
-          <div className="training-title">
-            <h3>{title}</h3>
-          </div>
-          <div className="tarinig-company">
-            <h4>{company_name}</h4>
-          </div>
-          <div className="trainig-description">
-            <p>
-              {description}
-            </p>
-          </div>
-          <div className="certificate-links">
-            <h6>
-              you can see the <Link to={certif_link}>Certificate here</Link> and the{" "}
-              <Link to={recomen_link}>Recomendation letter</Link>
-            </h6>
+    <>
+      {trainingData.map((training) => (
+        <div className="trainig-element">
+          <div className="row">
+            <div className="col-md-9">
+              <div className="training-title">
+                <h3>{training.training_name}</h3>
+              </div>
+              <div className="tarinig-company">
+                <h4>{training.company_name}</h4>
+              </div>
+              <div className="trainig-description">
+                <p>
+                  {training.description}
+                </p>
+              </div>
+              <div className="certificate-links">
+                <h6>
+                  you can see the{" "}
+                  <a href={training.certificate_link}>Certificate here</a> and
+                  the{" "}
+                  <a href={training.recomendation_letter_link}>
+                    Recomendation letter
+                  </a>
+                </h6>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="company-logo">
+                <a href={training.company_link}>
+                  <img src={training.company_logo} alt="company-logo" />
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
-        <div className="col-md-3">
-          <div className="company-logo">
-            <Link to="https://www.focal-x.com/">
-              {" "}
-              <img src={logo_url} alt="focal-x-logo" />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+      ))}
+    </>
   );
 }
 
