@@ -1,32 +1,28 @@
-import { Link } from "react-router-dom";
-import certificate from "./../../assets/certificate.jpg";
-import focal_logo from "./../../assets/focal_logo.jfif";
+// import { Link } from "react-router-dom";
+// import certificate from "./../../assets/certificate.jpg";
+// import focal_logo from "./../../assets/focal_logo.jfif";
 import "./Home.css";
-import { FaGithub } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { MdAlternateEmail } from "react-icons/md";
-import { FaWhatsappSquare } from "react-icons/fa";
-import OneSkill from "../../components/OneSkill/OneSkill";
-import bootstrap from "./../../assets/bootstrap.svg";
-import html from "./../../assets/html.svg";
-import css from "./../../assets/css.svg";
-import php from "./../../assets/php-1.svg";
-import git from "./../../assets/git.svg";
-import js from "./../../assets/js.svg";
-import redux from "./../../assets/redux.svg";
-import laravel from "./../../assets/laravel-2.svg";
-import mysql from "./../../assets/mysql-1.svg";
-import typescript from "./../../assets/typescript.svg";
-import react from "./../../assets/react.svg";
-import SliderImage from "../../components/Slider/SliderImage";
+// import OneSkill from "../../components/OneSkill/OneSkill";
+// import bootstrap from "./../../assets/bootstrap.svg";
+// import html from "./../../assets/html.svg";
+// import css from "./../../assets/css.svg";
+// import php from "./../../assets/php-1.svg";
+// import git from "./../../assets/git.svg";
+// import js from "./../../assets/js.svg";
+// import redux from "./../../assets/redux.svg";
+// import laravel from "./../../assets/laravel-2.svg";
+// import mysql from "./../../assets/mysql-1.svg";
+// import typescript from "./../../assets/typescript.svg";
+// import react from "./../../assets/react.svg";
 import aboutImage from "./../../assets/about-me.svg";
 import ContactForm from "../../components/ContactForm/ContactForm";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
+// import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import WhyMeCard from "../../components/WhyMeCard/WhyMeCard";
-import React, { Ref, RefObject, useRef } from "react";
+import React, { useRef } from "react";
 import TrainingElement from "../../components/TrainingElement/TrainingElement";
 import EducationElement from "../../components/EducationElement/EducationElement";
+import Hero from "../../components/Hero/Hero";
+import Skills from "../../components/Skills/Skills";
 function Home() {
   const projectRef = useRef(null);
   const data = [
@@ -56,43 +52,7 @@ function Home() {
   return (
     <div className="home-page">
       <section id="hero-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <div className="my-name">
-                <h1>Ahmed Mohammed</h1>
-              </div>
-              <div className="my-prief">
-                <h2>
-                  Hi, I'm a passionate Fullstack Developer with a strong
-                  foundation in HTML, CSS, JavaScript, TypeScript, React, PHP
-                  and Laravel. Eager to collaborate with experts, contribute to
-                  success, and enhance abilities.
-                </h2>
-              </div>
-              <div className="my-links mt-3">
-                <Link to="/">
-                  <FaGithub />
-                </Link>
-                <Link to="/">
-                  <FaLinkedin />
-                </Link>
-                <Link to="/">
-                  <FaFacebookSquare />
-                </Link>
-                <Link to="/">
-                  <MdAlternateEmail />
-                </Link>
-                <Link to="/">
-                  <FaWhatsappSquare />
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-4 mt-3">
-              <SliderImage />
-            </div>
-          </div>
-        </div>
+        <Hero />
       </section>
       <section id="about-section">
         <div className="container">
@@ -154,7 +114,6 @@ function Home() {
                 <div className="after-line"></div>
               </div>
               <EducationElement />
-              <EducationElement />
             </div>
             <div className="training-container">
               <div className="title-with-line mb-4">
@@ -165,106 +124,13 @@ function Home() {
               <div className="training-elements-container">
                 
                 <TrainingElement />
-                <TrainingElement />
-                <TrainingElement />
               </div>
             </div>
           </div>
         </div>
       </section>
       <section id="skills-section">
-        <div className="container">
-          <div className="section-title mb-5">
-            <h1>Skills</h1>
-          </div>
-          <div className="skills-tag">
-            <div className="title-with-line">
-              <div className="before-line"></div>
-              <h2>Programming Languages</h2>
-              <div className="after-line"></div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="JavaScript" skill_image={js} />
-              </div>
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="TypeScript" skill_image={typescript} />
-              </div>
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="PHP" skill_image={php} />
-              </div>
-            </div>
-          </div>
-          <div className="skills-tag">
-            <div className="title-with-line">
-              <div className="before-line"></div>
-              <h2>Libraries</h2>
-              <div className="after-line"></div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="React" skill_image={react} />
-              </div>
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="Redux" skill_image={redux} />
-              </div>
-            </div>
-          </div>
-          <div className="skills-tag">
-            <div className="title-with-line">
-              <div className="before-line"></div>
-              <h2>Frameworks</h2>
-              <div className="after-line"></div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="Bootstrap" skill_image={bootstrap} />
-              </div>
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="Laravel" skill_image={laravel} />
-              </div>
-            </div>
-          </div>
-          <div className="skills-tag">
-            <div className="title-with-line">
-              <div className="before-line"></div>
-              <h2>Markup Languages</h2>
-              <div className="after-line"></div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4  col-md-11 col-sm-11 ">
-                <OneSkill skill_name="HTML" skill_image={html} />
-              </div>
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="Css" skill_image={css} />
-              </div>
-            </div>
-          </div>
-          <div className="skills-tag">
-            <div className="title-with-line">
-              <div className="before-line"></div>
-              <h2>Database Management</h2>
-              <div className="after-line"></div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="MySQL" skill_image={mysql} />
-              </div>
-            </div>
-          </div>
-          <div className="skills-tag">
-            <div className="title-with-line">
-              <div className="before-line"></div>
-              <h2>Additional Skills</h2>
-              <div className="after-line"></div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4  col-md-11 col-sm-11">
-                <OneSkill skill_name="Git" skill_image={git} />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Skills />
       </section>
       <section id="projects-section" ref={projectRef}>
         <div className="container">
@@ -274,13 +140,13 @@ function Home() {
           <div className="project-container">
             <div className="row">
               <div className="col-lg-4 col-md-6 col-sm-12">
-                <ProjectCard />
+                {/* <ProjectCard /> */}
               </div>
               <div className="col-lg-4 col-md-6 col-sm-12">
-                <ProjectCard />
+                {/* <ProjectCard /> */}
               </div>
               <div className="col-lg-4 col-md-6 col-sm-12">
-                <ProjectCard />
+                {/* <ProjectCard /> */}
               </div>
             </div>
           </div>
