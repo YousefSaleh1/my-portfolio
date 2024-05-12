@@ -50,6 +50,7 @@
   padding-top: 50px;
   padding-bottom: 30px;
 }
+
 /* ==============================================
 =================== Hero Section ================
 ================================================= */
@@ -68,12 +69,14 @@
   font-size: 1.5rem;
   color: var(--placeholder-color);
 }
-#hero-section .my-links{
+
+#hero-section .my-links {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 15px;
 }
+
 #hero-section .my-links svg {
   width: 35px;
   height: 35px;
@@ -86,6 +89,18 @@
   letter-spacing: 2px;
 }
 
+a.download-bottom {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  color: var(--black);
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  margin-top: 1rem;
+}
+a.download-bottom:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
 
 
 /* ==============================================
@@ -93,10 +108,11 @@
 ================================================= */
 
 
-#about-section{
+#about-section {
   margin-top: 50px;
   margin-bottom: 100px;
 }
+
 #about-section .about-container {
   height: 100%;
   display: flex;
@@ -118,7 +134,7 @@
   font-size: var(--font-medium-x-size);
 }
 
-#about-section .hire-me button{
+#about-section .hire-me button {
   color: var(--white) !important;
   font-weight: 500;
   width: 100px;
@@ -129,18 +145,20 @@
   transition: all .2s;
 }
 
-#about-section .whyme-title{
+#about-section .whyme-title {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#about-section .whyme-title h3{
+
+#about-section .whyme-title h3 {
   border-bottom: 3px solid var(--placeholder-color);
   font-size: 2.2rem !important;
   text-align: center;
   padding-bottom: 5px;
 }
-#about-section .whyme-cards-container .col-md-4{
+
+#about-section .whyme-cards-container .col-md-4 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,9 +203,10 @@
   height: 1px;
 }
 
-#education-training-section .education-body{
+#education-training-section .education-body {
   margin-top: 25px;
 }
+
 #education-training-section .certificate-description p {
   font-family: "motserat";
   margin-bottom: 30px;
@@ -252,11 +271,12 @@
 #skills-section {
   margin-top: 30px;
 }
+
 /* thir is mmore classes style for skills section but it is Sheard with Education section */
 
 
 
-#projects-section .row{
+#projects-section .row {
   padding: 50px 0;
   overflow: hidden;
 }
@@ -268,7 +288,8 @@
   min-height: 100vh;
   max-height: max-content;
 }
-#contact-section .contact-container{
+
+#contact-section .contact-container {
   color: var(--secondary) !important;
   display: flex;
   justify-content: center;
@@ -276,12 +297,14 @@
   align-items: start;
   flex-direction: column;
 }
-#contact-section .contact-container .contact-header h2{
+
+#contact-section .contact-container .contact-header h2 {
   border-bottom: 3px solid var(--placeholder-color);
   width: fit-content;
   font-size: 2.5rem !important;
 }
-#contact-section .contact-container .contact-details{
+
+#contact-section .contact-container .contact-details {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -289,11 +312,13 @@
   flex-direction: column;
   margin-bottom: 20px;
 }
-#contact-section .contact-container .contact-details .my-name h5{
+
+#contact-section .contact-container .contact-details .my-name h5 {
   font-family: var(--font-name-family);
   font-size: 1.8rem;
 }
-#contact-section .contact-container .contact-details p{
+
+#contact-section .contact-container .contact-details p {
   font-size: var(--font-medium-x-size);
 }
 
@@ -323,32 +348,40 @@
   .title-with-line h2 {
     font-size: 17px !important;
   }
-  #hero-section{
+
+  #hero-section {
     padding-top: 30px;
   }
+
   #hero-section .my-name,
-  #hero-section .my-prief{
+  #hero-section .my-prief {
     margin: 40px 0px;
   }
-  #hero-section .my-links{
+
+  #hero-section .my-links {
     justify-content: center;
     gap: 20px;
     margin: 40px 0px;
   }
-  #about-section .section-title{
+
+  #about-section .section-title {
     padding-top: 0;
   }
-  #about-section .hire-me{
+
+  #about-section .hire-me {
     display: flex;
     justify-content: center !important;
   }
+
   #about-section .quiz-title h2 {
 
     font-size: 2rem !important;
   }
-  #about-section .whyme-title{
+
+  #about-section .whyme-title {
     margin-top: 90px;
   }
+
   #skills-section .skills-tag .row {
     display: flex;
     justify-content: center;
@@ -372,14 +405,17 @@
     border-radius: 10px;
     object-fit: fill;
   }
+
   #contact-section form,
-  #contact-section col-lg-7{
+  #contact-section col-lg-7 {
     padding: 0;
   }
-  #contact-section .contact-container .contact-header h2{
+
+  #contact-section .contact-container .contact-header h2 {
     font-size: 2rem !important;
   }
-  #hero-section > div > div > div.col-lg-4.mt-3 > div{
+
+  #hero-section>div>div>div.col-lg-4.mt-3>div {
     display: flex;
     justify-content: center;
   }

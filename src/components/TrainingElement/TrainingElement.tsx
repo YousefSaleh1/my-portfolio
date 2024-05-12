@@ -1,17 +1,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-type TTraining = {
-  id: number;
-  training_name: string;
-  company_name: string;
-  description: string;
-  company_logo: string;
-  company_link: string;
-  certificate_link: string;
-  recomendation_letter_link: string;
-}
+import { TTraining } from "../../types/type";
 
 function TrainingElement() {
   const [trainingData, setTrainingData] = useState<TTraining[]>([]);
@@ -62,7 +52,7 @@ function TrainingElement() {
             <div className="col-md-3">
               <div className="company-logo">
                 <a href={training.company_link}>
-                  <img src={training.company_logo} alt="company-logo" />
+                  <img src={training.company_logo} alt="company-logo" loading="lazy" />
                 </a>
               </div>
             </div>

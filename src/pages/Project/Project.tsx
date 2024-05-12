@@ -3,74 +3,49 @@ import { HiCode } from "react-icons/hi";
 import "./Project.css";
 import { FaLink } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
-import HTMLImage from "./../../assets/html.svg";
-import CSSImage from "./../../assets/css.svg";
-import TypeScriptImage from "./../../assets/typescript.svg";
-import BootstrapImage from "./../../assets/bootstrap.svg";
-import reactImage from "./../../assets/react.svg";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { TParams, TProject } from "../../types/type";
 
 function Project() {
-  const project = {
-    title: "Fresh Cart",
-    description:
-      "E-Commerce website comes equipped with a range of features that include simplified user management (registration, login, and password reset), product browsing, product description viewing, adding and removing products from your cart, adding and removing products from your wishlist, and secure online payment transactions through an integrated payment gateway.",
-    github_link: "https://github.com/abdalrhman80/Fresh-Cart-App",
-    demo_link: "https://abdalrhman80.github.io/Fresh-Cart-App",
-  };
 
-  const skills = [
-    {
-      skill_item: "HTML",
-      image: HTMLImage,
-    },
-    {
-      skill_item: "CSS",
-      image: CSSImage,
-    },
-    {
-      skill_item: "TypeScript",
-      image: TypeScriptImage,
-    },
-    {
-      skill_item: "Bootstrap",
-      image: BootstrapImage,
-    },
-    {
-      skill_item: "Angular",
-      image: reactImage,
-    },
-  ];
+  const id = useParams<TParams>();
 
-  const ProjectPhotos = [
-    {
-      photoLink:
-        "https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart1.png",
-    },
-    {
-      photoLink:
-        "https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart2.png",
-    },
-    {
-      photoLink:
-        "https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart3.png",
-    },
-    {
-      photoLink:
-        "https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart4.png",
-    },
-    {
-      photoLink:
-        "https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart5.png",
-    },
-    {
-      photoLink:
-        "https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart6.png",
-    },
-    {
-      photoLink:
-        "https://abdalrhman80.github.io/My-Portfolio/assets/images/overview-Images/freshCart/freshCart7.png",
-    },
-  ];
+  const test = {
+    id: 1,
+    title: 'string',
+    description: 'string',
+    published: 'string',
+    demo_link: 'string',
+    github_link: 'string',
+    project_photos: [
+      {
+        photo: 'test'
+      }
+    ],
+    skills: [
+      {
+        id: 0,
+        item: 'test',
+        image: 'test',
+      }
+    ],
+  }
+
+  const [project, setProject] = useState<TProject>(test);
+
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/api/project/${id.id}`)
+      .then((response) => {
+        setProject(response.data.data.project);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [id]);
+
   return (
     <div className="project">
       <div id="ys-container" className="container">
@@ -90,16 +65,17 @@ function Project() {
                 </a>
               </div>
               <div className="project-technologies">
-                {skills.map((skill, index) => (
-                  <a key={index} href="#" className="technology">
+                {project.skills.map((skill) => (
+                  <a href="#" className="technology">
                     <div className="technology-info">
                       <img
                         src={skill.image}
-                        alt=""
+                        alt={skill.item}
                         className="technology-image"
+                        loading="lazy"
                       />
                       <span className="technology-name">
-                        {skill.skill_item}
+                        {skill.item}
                       </span>
                     </div>
                   </a>
@@ -110,13 +86,12 @@ function Project() {
               <p>{project.description}</p>
             </div>
             <div className="row">
-              {ProjectPhotos.map((photo, index) => (
+              {project.project_photos.map((photo) => (
                 <div
-                  key={index}
                   className="project-image col-lg-4 col-md-6 mb-3"
                 >
                   <div className="overview">
-                    <img src={photo.photoLink} alt="" />
+                    <img src={photo.photo} alt={project.title} loading="lazy" />
                     <div className="overview-layer">
                       <FaEye />
                     </div>
