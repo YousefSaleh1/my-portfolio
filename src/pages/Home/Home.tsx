@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import {  useEffect , useState} from "react";
 import certificate from "./../../assets/certificate.jpg";
 import focal_logo from "./../../assets/focal_logo.jfif";
 import "./Home.css";
@@ -24,11 +25,22 @@ import aboutImage from "./../../assets/about-me.svg";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import WhyMeCard from "../../components/WhyMeCard/WhyMeCard";
-import React, { Ref, RefObject, useRef } from "react";
+
 import TrainingElement from "../../components/TrainingElement/TrainingElement";
 import EducationElement from "../../components/EducationElement/EducationElement";
+import axios from 'axios';
 function Home() {
-  const projectRef = useRef(null);
+  const [trainengData, setTrainengData] = useState([]);
+  useEffect(()=>{
+    const fetchTrainingData =  async () => {
+      const resultTraining = await axios('http://127.0.0.1:8000/api/trainings');
+      setTrainengData(resultTraining.data.data[0]);
+      console.log(resultTraining.data.data[0]);
+    }
+    fetchTrainingData();
+
+  },[]);
+  
   const data = [
     {
       img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Search.svg",
@@ -164,9 +176,7 @@ function Home() {
               </div>
               <div className="training-elements-container">
                 
-                <TrainingElement />
-                <TrainingElement />
-                <TrainingElement />
+                <TrainingElement title={trainengData.training_name} company_name={trainengData.company_name} description={trainengData.description} logo_url={trainengData.company_logo} certif_link={trainengData.certificate_link} recomen_link={trainengData.recomendation_letter_link} />
               </div>
             </div>
           </div>
@@ -266,7 +276,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section id="projects-section" ref={projectRef}>
+      <section id="projects-section">
         <div className="container">
           <div className="section-title mb-5">
             <h1>Projects</h1>

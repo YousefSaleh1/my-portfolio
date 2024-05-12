@@ -1,32 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import focal_logo from "./../../assets/focal_logo.jfif";
-function TrainingElement() {
+type Ttraining ={
+    title : string ,
+    company_name : string ,
+    description : string ,
+    certif_link : string ,
+    recomen_link : string ,
+    logo_url: string ,
+}
+function TrainingElement({title , company_name, description,certif_link,recomen_link,logo_url}: Ttraining) {
   return (
     <div className="trainig-element">
       <div className="row">
         <div className="col-md-9">
           <div className="training-title">
-            <h3>Frontend Beginners Cource</h3>
+            <h3>{title}</h3>
           </div>
           <div className="tarinig-company">
-            <h4>Focal X Agency</h4>
+            <h4>{company_name}</h4>
           </div>
           <div className="trainig-description">
             <p>
-              I worked inI underwent a paid training program at FOCAL X ,
-              spanning a period of four months. This comprehensive training
-              program focused on front end development and provided me with
-              valuable expertise in web technologies. During the training, I
-              acquired hands on experience in building user interfaces using
-              Html, css, Bootstrap, JavaScript and React I mastered the art of
-              crafting responsive and visually appealing web interfaces,
+              {description}
             </p>
           </div>
           <div className="certificate-links">
             <h6>
-              you can see the <Link to="/">Certificate here</Link> and the{" "}
-              <Link to="/">Recomendation letter</Link>
+              you can see the <Link to={certif_link}>Certificate here</Link> and the{" "}
+              <Link to={recomen_link}>Recomendation letter</Link>
             </h6>
           </div>
         </div>
@@ -34,7 +36,7 @@ function TrainingElement() {
           <div className="company-logo">
             <Link to="https://www.focal-x.com/">
               {" "}
-              <img src={focal_logo} alt="focal-x-logo" />
+              <img src={logo_url} alt="focal-x-logo" />
             </Link>
           </div>
         </div>
