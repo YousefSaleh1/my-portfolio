@@ -19,6 +19,7 @@ function WhyMeCard({ img, title, des }: TWhyCard) {
           src={img}
           className="w-50 h-50 pt-5 rounded mx-auto d-block"
           alt="..."
+          loading="lazy"
         />
         <div className="card-body text-center">
           <h5 className="card-title fw-bolder pt-2">{title}</h5>

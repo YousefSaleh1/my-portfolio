@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { TEducation } from "../../types/type";
 
-type TEducation = {
-  id: number;
-  title: string;
-  description: string;
-  photo: string;
-}
 
 function EducationElement() {
 
@@ -37,7 +32,7 @@ function EducationElement() {
               </div>
               <div className="col-md-4">
                 <div className="certificate-image mt-4">
-                  <img src={education.photo} alt="photo of certificate" />
+                  <img src={education.photo} alt="photo of certificate" loading="lazy" />
                 </div>
               </div>
             </div>

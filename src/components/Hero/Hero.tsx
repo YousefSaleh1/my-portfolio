@@ -1,4 +1,4 @@
-import { FaGithub } from "react-icons/fa6";
+import { FaDownload, FaGithub } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
@@ -6,23 +6,23 @@ import { FaWhatsappSquare } from "react-icons/fa";
 import SliderImage from "../Slider/SliderImage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { THeroDate, THeroSlider } from "../../types/type";
 
-type THeroSlider = {
-  id: number;
-  photo_slide: string;
-  photo_title: string;
-}
+// type THeroSlider = {
+//   id: number;
+//   photo_slide: string;
+//   photo_title: string;
+// }
 
-type THeroDate = {
-  title: string;
-  my_cv: string;
-  hero_sliders: THeroSlider[];
-}
+// type THeroDate = {
+//   title: string;
+//   my_cv: string;
+//   hero_sliders: THeroSlider[];
+// }
 
 export default function Hero() {
 
   const [title, setTitle] = useState('');
-  const [myCv, setMyCv] = useState('');
   const [heroSliders, setHeroSliders] = useState<THeroSlider[]>([]);
 
   useEffect(() => {
@@ -34,7 +34,6 @@ export default function Hero() {
       .then(response => {
         const data = response.data.data;
         setTitle(data.title);
-        setMyCv(data.my_cv);
         setHeroSliders(data.hero_sliders);
       })
       .then(response => { console.log(response) })
@@ -73,6 +72,10 @@ export default function Hero() {
                 <FaWhatsappSquare />
               </a>
             </div>
+            <a href='http://127.0.0.1:8000/api/download-cv' className="btn rounded-3 download-bottom" >
+              <span>Download CV</span>
+              <FaDownload />
+            </a>
           </div>
           <div className="col-lg-4 mt-3">
             <SliderImage heroSliders={heroSliders} />

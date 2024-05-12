@@ -35,30 +35,6 @@ function Navbar() {
     setSideBarActive(!sideBarActive);
   };
 
-  // const menuItems = [
-  //   { name: "home", icon: <FaHome className="nav-link-icon" />, label: "Home" },
-  //   {
-  //     name: "about",
-  //     icon: <FaUserAlt className="nav-link-icon" />,
-  //     label: "About",
-  //   },
-  //   {
-  //     name: "skills",
-  //     icon: <FaCogs className="nav-link-icon" />,
-  //     label: "Skills",
-  //   },
-  //   {
-  //     name: "projects",
-  //     icon: <FaCube className="nav-link-icon" />,
-  //     label: "Projects",
-  //   },
-  //   {
-  //     name: "contact",
-  //     icon: <FaLink className="nav-link-icon" />,
-  //     label: "Contact",
-  //   },
-  // ];
-
   return (
     <>
       <nav className="ys-navbar">
@@ -168,7 +144,6 @@ function Navbar() {
         <Sidebar
           activeItem={activeItem}
           handleItemClick={handleItemClick}
-          menuItems={menuItems}
           toggleDisplay={toggleDisplay}
           toggleDarkMode={toggleDarkMode}
           isDarkMode={isDarkMode}

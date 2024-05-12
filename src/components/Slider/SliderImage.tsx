@@ -1,11 +1,6 @@
+import { THeroSlider } from '../../types/type';
 import './SliderImage.css'
 import Slider from "react-slick";
-
-type THeroSlider = {
-  id: number;
-  photo_slide: string;
-  photo_title: string;
-}
 
 function SliderImage({ heroSliders }: { heroSliders: THeroSlider[] }) {
 
@@ -28,7 +23,7 @@ function SliderImage({ heroSliders }: { heroSliders: THeroSlider[] }) {
         <Slider {...settings}>
           {heroSliders.map((heroSlider) => (
             <div key={heroSlider.id} className='slider-img'  >
-              <img src={heroSlider.photo_slide} alt={heroSlider.photo_title} />
+              <img src={heroSlider.photo_slide} alt={heroSlider.photo_title} loading="lazy"/>
               <p className='skill-name'>{heroSlider.photo_title}</p>
             </div>
           ))}

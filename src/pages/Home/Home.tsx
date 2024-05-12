@@ -23,6 +23,7 @@ import TrainingElement from "../../components/TrainingElement/TrainingElement";
 import EducationElement from "../../components/EducationElement/EducationElement";
 import Hero from "../../components/Hero/Hero";
 import Skills from "../../components/Skills/Skills";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
 function Home() {
   const projectRef = useRef(null);
   const data = [
@@ -91,8 +92,8 @@ function Home() {
             </h3>
           </div>
           <div className="whyme-cards-container row mt-5 overflow-hidden">
-            {data.map((data ,index) =>{
-              return(
+            {data.map((data, index) => {
+              return (
                 <div className="col-md-4" key={index}>
                   <WhyMeCard img={data.img} title={data.title} des={data.sub} />
                 </div>
@@ -122,7 +123,7 @@ function Home() {
                 <div className="after-line"></div>
               </div>
               <div className="training-elements-container">
-                
+
                 <TrainingElement />
               </div>
             </div>
@@ -139,15 +140,7 @@ function Home() {
           </div>
           <div className="project-container">
             <div className="row">
-              <div className="col-lg-4 col-md-6 col-sm-12">
-                {/* <ProjectCard /> */}
-              </div>
-              <div className="col-lg-4 col-md-6 col-sm-12">
-                {/* <ProjectCard /> */}
-              </div>
-              <div className="col-lg-4 col-md-6 col-sm-12">
-                {/* <ProjectCard /> */}
-              </div>
+              <ProjectCard />
             </div>
           </div>
         </div>
