@@ -1,6 +1,8 @@
+
 // import { Link } from "react-router-dom";
 // import certificate from "./../../assets/certificate.jpg";
 // import focal_logo from "./../../assets/focal_logo.jfif";
+
 import "./Home.css";
 // import OneSkill from "../../components/OneSkill/OneSkill";
 // import bootstrap from "./../../assets/bootstrap.svg";
@@ -18,6 +20,9 @@ import aboutImage from "./../../assets/about-me.svg";
 import ContactForm from "../../components/ContactForm/ContactForm";
 // import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import WhyMeCard from "../../components/WhyMeCard/WhyMeCard";
+
+import axios from 'axios';
+
 import React, { useRef } from "react";
 import TrainingElement from "../../components/TrainingElement/TrainingElement";
 import EducationElement from "../../components/EducationElement/EducationElement";
@@ -25,7 +30,17 @@ import Hero from "../../components/Hero/Hero";
 import Skills from "../../components/Skills/Skills";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 function Home() {
-  const projectRef = useRef(null);
+  const [trainengData, setTrainengData] = useState([]);
+  useEffect(()=>{
+    const fetchTrainingData =  async () => {
+      const resultTraining = await axios('http://127.0.0.1:8000/api/trainings');
+      setTrainengData(resultTraining.data.data[0]);
+      console.log(resultTraining.data.data[0]);
+    }
+    fetchTrainingData();
+
+  },[]);
+  
   const data = [
     {
       img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Search.svg",
@@ -123,7 +138,6 @@ function Home() {
                 <div className="after-line"></div>
               </div>
               <div className="training-elements-container">
-
                 <TrainingElement />
               </div>
             </div>
@@ -133,7 +147,7 @@ function Home() {
       <section id="skills-section">
         <Skills />
       </section>
-      <section id="projects-section" ref={projectRef}>
+      <section id="projects-section">
         <div className="container">
           <div className="section-title mb-5">
             <h1>Projects</h1>

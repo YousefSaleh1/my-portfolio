@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TTraining } from "../../types/type";
@@ -55,6 +56,7 @@ function TrainingElement() {
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       ))}
