@@ -1,70 +1,17 @@
 
-// import { Link } from "react-router-dom";
-// import certificate from "./../../assets/certificate.jpg";
-// import focal_logo from "./../../assets/focal_logo.jfif";
-
 import "./Home.css";
-// import OneSkill from "../../components/OneSkill/OneSkill";
-// import bootstrap from "./../../assets/bootstrap.svg";
-// import html from "./../../assets/html.svg";
-// import css from "./../../assets/css.svg";
-// import php from "./../../assets/php-1.svg";
-// import git from "./../../assets/git.svg";
-// import js from "./../../assets/js.svg";
-// import redux from "./../../assets/redux.svg";
-// import laravel from "./../../assets/laravel-2.svg";
-// import mysql from "./../../assets/mysql-1.svg";
-// import typescript from "./../../assets/typescript.svg";
-// import react from "./../../assets/react.svg";
 import aboutImage from "./../../assets/about-me.svg";
 import ContactForm from "../../components/ContactForm/ContactForm";
-// import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import WhyMeCard from "../../components/WhyMeCard/WhyMeCard";
-
 import axios from 'axios';
-
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import TrainingElement from "../../components/TrainingElement/TrainingElement";
 import EducationElement from "../../components/EducationElement/EducationElement";
 import Hero from "../../components/Hero/Hero";
 import Skills from "../../components/Skills/Skills";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 function Home() {
-  const [trainengData, setTrainengData] = useState([]);
-  useEffect(()=>{
-    const fetchTrainingData =  async () => {
-      const resultTraining = await axios('http://127.0.0.1:8000/api/trainings');
-      setTrainengData(resultTraining.data.data[0]);
-      console.log(resultTraining.data.data[0]);
-    }
-    fetchTrainingData();
-
-  },[]);
   
-  const data = [
-    {
-      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Search.svg",
-      title: " Continuous learning",
-      sub: "I obsess over every pixel and detail, ensuring seamless user experiences , honed to perfection in every project.",
-    },
-    {
-      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Learning.svg",
-      title: "Continuous learning",
-      sub: "I'm trying to stay up-to-date with latest trends, technologies, and best practices in frontend development.",
-    },
-    {
-      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Responsive.svg",
-      title: "Responsive design",
-      sub: "I specialize in developing websites that seamlessly adapt across diverse screen sizes and devices.",
-    },
-    {
-      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Development.svg",
-      title: "Web development",
-      sub: "Now, I study Backend development, and I am excited to develop my skills in it, My journey in development continues.",
-    },
-  ];
-
-
   return (
     <div className="home-page">
       <section id="hero-section">
