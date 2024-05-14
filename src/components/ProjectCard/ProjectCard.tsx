@@ -24,7 +24,7 @@ function ProjectCard() {
     <>
       {projects.map((project) => (
         <div className="col-lg-4 col-md-6 col-sm-12">
-          <Link to={`/project/${project.id}`}>
+          <Link className="project-link" to={`/project/${project.id}`}>
             <div className="project-card-component">
               <div className="card" >
                 <div className="card-body">
