@@ -11,7 +11,29 @@ import Hero from "../../components/Hero/Hero";
 import Skills from "../../components/Skills/Skills";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 function Home() {
-  
+  const data = [
+    {
+      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Search.svg",
+      title: " Continuous learning",
+      sub: "I obsess over every pixel and detail, ensuring seamless user experiences , honed to perfection in every project.",
+    },
+    {
+      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Learning.svg",
+      title: "Continuous learning",
+      sub: "I'm trying to stay up-to-date with latest trends, technologies, and best practices in frontend development.",
+    },
+    {
+      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Responsive.svg",
+      title: "Responsive design",
+      sub: "I specialize in developing websites that seamlessly adapt across diverse screen sizes and devices.",
+    },
+    {
+      img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Development.svg",
+      title: "Web development",
+      sub: "Now, I study Backend development, and I am excited to develop my skills in it, My journey in development continues.",
+    },
+  ];
+
   return (
     <div className="home-page">
       <section id="hero-section">
