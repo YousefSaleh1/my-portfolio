@@ -49,11 +49,8 @@
   }
   #about-section .card-why:hover{
     transform: scale(1.1);
-    /* border: 2px; */
   }
-  /* .card-text{
-    color: var();
-  } */
+
   .card-why{
     display: flex;
     justify-content: center;
