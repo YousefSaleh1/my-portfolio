@@ -58,8 +58,10 @@
   .project-card-component .card .card-body{
     padding: 0;
   }
-  .project-card-component .card .card-body .card-text{
+  .project-card-component .card .card-body p.card-text{
     color: var(--black);
+    height: 100px !important;
+    overflow-y: hidden;
   }
   .project-card-component .card .card-body .card-date{
     padding: 2px;

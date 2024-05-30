@@ -1,31 +1,16 @@
-// import { Link } from "react-router-dom";
-// import certificate from "./../../assets/certificate.jpg";
-// import focal_logo from "./../../assets/focal_logo.jfif";
+
 import "./Home.css";
-// import OneSkill from "../../components/OneSkill/OneSkill";
-// import bootstrap from "./../../assets/bootstrap.svg";
-// import html from "./../../assets/html.svg";
-// import css from "./../../assets/css.svg";
-// import php from "./../../assets/php-1.svg";
-// import git from "./../../assets/git.svg";
-// import js from "./../../assets/js.svg";
-// import redux from "./../../assets/redux.svg";
-// import laravel from "./../../assets/laravel-2.svg";
-// import mysql from "./../../assets/mysql-1.svg";
-// import typescript from "./../../assets/typescript.svg";
-// import react from "./../../assets/react.svg";
 import aboutImage from "./../../assets/about-me.svg";
 import ContactForm from "../../components/ContactForm/ContactForm";
-// import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import WhyMeCard from "../../components/WhyMeCard/WhyMeCard";
-import React, { useRef } from "react";
+import axios from 'axios';
+import React, { useState } from "react";
 import TrainingElement from "../../components/TrainingElement/TrainingElement";
 import EducationElement from "../../components/EducationElement/EducationElement";
 import Hero from "../../components/Hero/Hero";
 import Skills from "../../components/Skills/Skills";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 function Home() {
-  const projectRef = useRef(null);
   const data = [
     {
       img: "https://abdalrhman80.github.io/My-Portfolio/assets/images/Search.svg",
@@ -48,7 +33,6 @@ function Home() {
       sub: "Now, I study Backend development, and I am excited to develop my skills in it, My journey in development continues.",
     },
   ];
-
 
   return (
     <div className="home-page">
@@ -123,7 +107,6 @@ function Home() {
                 <div className="after-line"></div>
               </div>
               <div className="training-elements-container">
-
                 <TrainingElement />
               </div>
             </div>
@@ -133,7 +116,7 @@ function Home() {
       <section id="skills-section">
         <Skills />
       </section>
-      <section id="projects-section" ref={projectRef}>
+      <section id="projects-section">
         <div className="container">
           <div className="section-title mb-5">
             <h1>Projects</h1>

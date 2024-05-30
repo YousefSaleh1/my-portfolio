@@ -8,17 +8,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { THeroDate, THeroSlider } from "../../types/type";
 
-// type THeroSlider = {
-//   id: number;
-//   photo_slide: string;
-//   photo_title: string;
-// }
-
-// type THeroDate = {
-//   title: string;
-//   my_cv: string;
-//   hero_sliders: THeroSlider[];
-// }
 
 export default function Hero() {
 
