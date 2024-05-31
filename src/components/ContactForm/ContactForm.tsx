@@ -64,7 +64,7 @@ function ContactForm() {
       };
 
       axios
-        .post("http://127.0.0.1:8000/api/concats-create", formData, {
+        .post("http://127.0.0.1:8000/api/contacts-create", formData, {
           headers: {
             "Accept": "application/json"
           }
