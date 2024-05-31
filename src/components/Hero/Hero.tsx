@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="row">
           <div className="col-lg-8">
             <div className="my-name">
-              <h1>Ahmed Mohammed</h1>
+              <h1>Yousef Saleh</h1>
             </div>
             <div className="my-prief">
               <h2>

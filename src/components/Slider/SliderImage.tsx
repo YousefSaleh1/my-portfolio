@@ -21,7 +21,7 @@ function SliderImage({ heroSliders }: { heroSliders: THeroSlider[] }) {
     <div>
       <div className="slider" style={{ width: '300px', height: '300px' }}>
         <Slider {...settings}>
-          {heroSliders.map((heroSlider) => (
+          {heroSliders?.map((heroSlider) => (
             <div key={heroSlider.id} className='slider-img'  >
               <img src={heroSlider.photo_slide} alt={heroSlider.photo_title} loading="lazy"/>
               <p className='skill-name'>{heroSlider.photo_title}</p>

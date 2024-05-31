@@ -14,21 +14,21 @@ function Project() {
 
   const test = {
     id: 1,
-    title: 'string',
-    description: 'string',
-    published: 'string',
-    demo_link: 'string',
-    github_link: 'string',
+    title: '',
+    description: '',
+    published: '',
+    demo_link: '',
+    github_link: '',
     project_photos: [
       {
-        photo: 'test'
+        photo: ''
       }
     ],
     skills: [
       {
         id: 0,
-        item: 'test',
-        image: 'test',
+        item: '',
+        image: '',
       }
     ],
   }
@@ -67,6 +67,7 @@ function Project() {
                 </a>
               </div>
               <div className="project-technologies">
+
                 {project.skills?.map((skill , index) => (
                   <a href="#" className="technology" key={index}>
                     <div className="technology-info">
@@ -88,7 +89,9 @@ function Project() {
               <p>{project.description}</p>
             </div>
             <div className="row">
+
               {project.project_photos?.map((photo , index) => (
+
                 <div
                   key={index}
                   className="project-image col-lg-4 col-md-6 mb-3"
