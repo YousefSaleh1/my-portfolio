@@ -40,6 +40,7 @@
 
 .project {
   background-color: var(--white);
+  min-height: calc(100vh - 57px)
 }
 
 .project-section {
