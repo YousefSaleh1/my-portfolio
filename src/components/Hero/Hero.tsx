@@ -6,6 +6,7 @@ import { FaWhatsappSquare } from "react-icons/fa";
 import SliderImage from "../Slider/SliderImage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { THeroDate, THeroSlider } from "../../types/type";
 
 
@@ -45,26 +46,26 @@ export default function Hero() {
               </h2>
             </div>
             <div className="my-links mt-3">
-              <a href="">
+              <a href="www.github.com/Ahmad-mh1999">
                 <FaGithub />
               </a>
-              <a href="">
+              <a href="www.linkedin.com/in/ahmed-mohammed-44a71a288">
                 <FaLinkedin />
               </a>
-              <a href="">
+              <a href="www.facebook.com/profile.php?id=100008629661043&mibextid=ZbWKwL">
                 <FaFacebookSquare />
               </a>
-              <a href="">
+              <a href="ahmedmhmad021@gmail.com">
                 <MdAlternateEmail />
               </a>
               <a href="">
                 <FaWhatsappSquare />
               </a>
             </div>
-            <a href='http://127.0.0.1:8000/api/download-cv' className="btn rounded-3 download-bottom" >
+            <Link to='http://127.0.0.1:8000/api/download-cv' className="btn rounded-3 download-bottom" >
               <span>Download CV</span>
               <FaDownload />
-            </a>
+            </Link>
           </div>
           <div className="col-lg-4 mt-3">
             <SliderImage heroSliders={heroSliders} />

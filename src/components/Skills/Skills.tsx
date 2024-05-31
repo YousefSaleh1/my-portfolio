@@ -29,9 +29,9 @@ export default function Skills() {
                 <div className="section-title mb-5">
                     <h1>Skills</h1>
                 </div>
-                {skillsData.map((skill: TSkill) => {
+                {skillsData.map((skill: TSkill,index) => {
                     return (
-                        <div className="skills-tag">
+                        <div className="skills-tag" key={index}>
                             <div className="title-with-line">
                                 <div className="before-line"></div>
                                 <h2>{skill.skill_name}</h2>
