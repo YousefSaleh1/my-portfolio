@@ -39,7 +39,9 @@ function Project() {
     axios
       .get(`http://127.0.0.1:8000/api/project/${id.id}`)
       .then((response) => {
+        
         setProject(response.data.data.project);
+        console.log(response.data.data.project.skills);
       })
       .catch((error) => {
         console.error(error);
@@ -65,8 +67,9 @@ function Project() {
                 </a>
               </div>
               <div className="project-technologies">
-                {project.skills?.map((skill) => (
-                  <a href="#" className="technology">
+
+                {project.skills?.map((skill , index) => (
+                  <a href="#" className="technology" key={index}>
                     <div className="technology-info">
                       <img
                         src={skill.image}
@@ -86,8 +89,11 @@ function Project() {
               <p>{project.description}</p>
             </div>
             <div className="row">
-              {project.project_photos?.map((photo) => (
+
+              {project.project_photos?.map((photo , index) => (
+
                 <div
+                  key={index}
                   className="project-image col-lg-4 col-md-6 mb-3"
                 >
                   <div className="overview">
