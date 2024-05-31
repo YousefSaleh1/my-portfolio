@@ -22,8 +22,8 @@ function ProjectCard() {
 
   return (
     <>
-      {projects.map((project) => (
-        <div className="col-lg-4 col-md-6 col-sm-12">
+      {projects.map((project,index) => (
+        <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
           <Link className="project-link" to={`/project/${project.id}`}>
             <div className="project-card-component">
               <div className="card" >
@@ -39,8 +39,9 @@ function ProjectCard() {
                     <h1 className="card-date rounded-4 col-4 mb-3">{project.published} </h1>
                   </div>
                   <div className="card-footer">
-                    {project.skills.map(skill => (
+                    {project.skills?.map((skill ,index )=> (
                       <Link
+                        key={index}
                         className="skill"
                         to="https://developer.mozilla.org/en-US/docs/Web/HTML"
                       >

@@ -41,7 +41,7 @@ function Navbar() {
         <div id="ys-container" className="container">
           <a className="nav-icon" href="#">
             <HiCode className="icon" />
-            <span>Yousef</span>
+            <span>Ahmed</span>
           </a>
           <button className="ys-toggler" onClick={toggleDisplay} type="button">
             <FaBars />

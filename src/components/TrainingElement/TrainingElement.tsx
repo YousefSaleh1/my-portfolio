@@ -23,8 +23,8 @@ function TrainingElement() {
 
   return (
     <>
-      {trainingData.map((training) => (
-        <div className="trainig-element">
+      {trainingData.map((training,index) => (
+        <div className="trainig-element" key={index}>
           <div className="row">
             <div className="col-md-9">
               <div className="training-title">

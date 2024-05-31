@@ -17,8 +17,8 @@ function EducationElement() {
   return (
     <>
       {
-        educationData.map((education) => (
-          <div className="education-body">
+        educationData.map((education,index) => (
+          <div className="education-body" key={index}>
             <div className="row">
               <div className="col-md-8">
                 <div className="certificate-title mt-4">
