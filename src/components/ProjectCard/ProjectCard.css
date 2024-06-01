@@ -38,8 +38,8 @@
   --active-color-hover-nav: #2b8ae8
 }
 
-a.project-link {
-  text-decoration: none !important;
+.project-link {
+  cursor: pointer;
 }
 
 .project-card-component .card {

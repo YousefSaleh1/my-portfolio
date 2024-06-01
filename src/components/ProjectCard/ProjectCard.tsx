@@ -1,6 +1,6 @@
 import "./ProjectCard.css";
 import { IoIosLink } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TProject } from "../../types/type";
@@ -10,6 +10,7 @@ function ProjectCard() {
 
   const [projects, setProjects] = useState<TProject[]>([]);
   const [loding, setLoding] = useState(true);
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/projects")
@@ -21,7 +22,9 @@ function ProjectCard() {
         console.error(error);
       });
   }, []);
-
+const handleNavigate = (id:number)=>{
+navigate(`/project/${id}`)
+}
 
   if(loding) return <PreLoader />
   else return (
@@ -30,7 +33,7 @@ function ProjectCard() {
       {projects?.map((project, index) => (
         <div key={index} className="col-lg-4 col-md-6 col-sm-12">
 
-          <Link className="project-link" to={`/project/${project.id}`}>
+          <div className="project-link" onClick={() => handleNavigate(project.id)} >
             <div className="project-card-component">
               <div className="card" >
                 <div className="card-body">
@@ -60,7 +63,7 @@ function ProjectCard() {
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       ))
       }

@@ -114,7 +114,7 @@ a.download-bottom:hover {
 
 
 #about-section {
-  margin-top: 50px;
+  padding-top: 50px;
   margin-bottom: 100px;
 }
 
@@ -274,13 +274,15 @@ a.download-bottom:hover {
 ================================================= */
 
 #skills-section {
-  margin-top: 30px;
+  padding-top: 30px;
 }
 
 /* thir is mmore classes style for skills section but it is Sheard with Education section */
 
 
-
+#projects-section{
+  padding-top: 20px;
+}
 #projects-section .row {
   padding: 50px 0;
   overflow: hidden;
