@@ -22,8 +22,10 @@ function EducationElement() {
   else return (
     <>
       {
-        educationData.map((education,index) => (
-          <div className="education-body" key={index}>
+
+        educationData?.map((education, index) => (
+          <div key={index} className="education-body">
+
             <div className="row">
               <div className="col-md-8">
                 <div className="certificate-title mt-4">

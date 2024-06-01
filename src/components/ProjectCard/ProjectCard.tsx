@@ -26,8 +26,10 @@ function ProjectCard() {
   if(loding) return <PreLoader />
   else return (
     <>
-      {projects.map((project,index) => (
-        <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+
+      {projects?.map((project, index) => (
+        <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+
           <Link className="project-link" to={`/project/${project.id}`}>
             <div className="project-card-component">
               <div className="card" >
@@ -43,9 +45,11 @@ function ProjectCard() {
                     <h1 className="card-date rounded-4 col-4 mb-3">{project.published} </h1>
                   </div>
                   <div className="card-footer">
-                    {project.skills?.map((skill ,index )=> (
+
+                    {project.skills?.map((skill) => (
                       <Link
-                        key={index}
+                        key={skill.id}
+
                         className="skill"
                         to="https://developer.mozilla.org/en-US/docs/Web/HTML"
                       >
