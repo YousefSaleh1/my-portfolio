@@ -1,6 +1,5 @@
-
 import "./Navbar.css";
-import {  useState } from "react";
+import { useState } from "react";
 import { HiCode } from "react-icons/hi";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
@@ -14,13 +13,45 @@ function Navbar() {
   const [sideBarActive, setSideBarActive] = useState(false);
   const [activeItem, setActiveItem] = useState("home");
 
-
   const handleScroll = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const handleDynamicScroll = () => {
+    const aboutElement = document.getElementById("about-section");
+    const skillsElement = document.getElementById("skills-section");
+    const projectsElement = document.getElementById("projects-section");
+    const contactElement = document.getElementById("contact-section");
+
+    if (aboutElement) {
+      const about = aboutElement.offsetTop;
+      if (window.pageYOffset < about) {
+        setActiveItem("home");
+      } else if (skillsElement) {
+        const skills = skillsElement.offsetTop;
+        if (window.pageYOffset < skills) {
+          setActiveItem("about");
+        } else if (projectsElement) {
+          const projects = projectsElement.offsetTop;
+          if (window.pageYOffset < projects) {
+            setActiveItem("skills");
+          } else if (contactElement) {
+            const contact = contactElement.offsetTop;
+            if (window.pageYOffset < contact) {
+              setActiveItem("projects");
+            } else {
+              setActiveItem("contact");
+            }
+          }
+        }
+      }
+    }
+  };
+
+  window.addEventListener("scroll", handleDynamicScroll);
+
   const handleItemClick = (itemName: string) => {
     setActiveItem(itemName);
   };
@@ -142,7 +173,6 @@ function Navbar() {
       {}
       {sideBarActive && (
         <Sidebar
-          activeItem={activeItem}
           handleItemClick={handleItemClick}
           toggleDisplay={toggleDisplay}
           toggleDarkMode={toggleDarkMode}

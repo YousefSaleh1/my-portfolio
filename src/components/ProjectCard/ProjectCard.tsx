@@ -4,23 +4,27 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TProject } from "../../types/type";
+import PreLoader from "../Preloader/Preloader";
 
 function ProjectCard() {
 
   const [projects, setProjects] = useState<TProject[]>([]);
-
+  const [loding, setLoding] = useState(true);
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/projects")
       .then((response) => {
         setProjects(response.data.data);
+        setLoding(false);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
-  return (
+
+  if(loding) return <PreLoader />
+  else return (
     <>
       {projects.map((project,index) => (
         <div className="col-lg-4 col-md-6 col-sm-12" key={index}>

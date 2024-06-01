@@ -77,9 +77,10 @@
   gap: 15px;
 }
 
-.download-bottom{
+.download-bottom {
   margin: 15px 0;
 }
+
 #hero-section .my-links svg {
   width: 35px;
   height: 35px;
@@ -99,6 +100,7 @@ a.download-bottom {
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
   margin-top: 1rem;
 }
+
 a.download-bottom:hover {
   background-color: var(--black);
   color: var(--white);
@@ -288,6 +290,8 @@ a.download-bottom:hover {
 ==================Contact Section================
 ================================================= */
 #contact-section {
+  padding-top: 100px;
+  padding-bottom: 55px;
   min-height: 100vh;
   max-height: max-content;
 }
@@ -343,6 +347,7 @@ a.download-bottom:hover {
   }
 
   .home-page .section-title h1 {
+    padding-top: 0 !important;
     font-size: 28px !important;
     font-weight: 800;
     letter-spacing: 1px;
@@ -352,8 +357,18 @@ a.download-bottom:hover {
     font-size: 17px !important;
   }
 
+  #hero-section .my-name h1 {
+    font-size: 40px !important;
+  }
+
   #hero-section {
     padding-top: 30px;
+  }
+
+  .btn-download-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
   }
 
   #hero-section .my-name,
@@ -408,7 +423,9 @@ a.download-bottom:hover {
     border-radius: 10px;
     object-fit: fill;
   }
-
+  #contact-section{
+    padding-top: 0 !important;
+  }
   #contact-section form,
   #contact-section col-lg-7 {
     padding: 0;

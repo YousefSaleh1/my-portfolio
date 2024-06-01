@@ -2,10 +2,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TTraining } from "../../types/type";
+import PreLoader from "../Preloader/Preloader";
 
 function TrainingElement() {
   const [trainingData, setTrainingData] = useState<TTraining[]>([]);
-
+  const [loding, setLoding] = useState(true);
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/trainings", {
@@ -15,13 +16,16 @@ function TrainingElement() {
       })
       .then((response) => {
         setTrainingData(response.data.data);
+        setLoding(false);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  return (
+
+  if(loding) return <PreLoader />
+  else return (
     <>
       {trainingData.map((training,index) => (
         <div className="trainig-element" key={index}>
@@ -56,7 +60,6 @@ function TrainingElement() {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       ))}

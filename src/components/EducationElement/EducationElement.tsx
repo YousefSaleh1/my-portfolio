@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TEducation } from "../../types/type";
-
+import PreLoader from "../Preloader/Preloader";
 
 function EducationElement() {
 
   const [educationData, setEducationData] = useState<TEducation[]>([]);
-
+  const [loding, setLoding] = useState(true);
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/educations")
-      .then((response) => setEducationData(response.data.data))
+      .then((response) => {
+        setEducationData(response.data.data);
+        setLoding(false);
+      })
       .catch((error) => console.log(error));
   }, []);
 
-  return (
+  
+  if(loding) return <PreLoader />
+  else return (
     <>
       {
         educationData.map((education,index) => (

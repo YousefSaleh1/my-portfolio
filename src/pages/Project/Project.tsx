@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TParams, TProject } from "../../types/type";
+import PreLoader from "../../components/Preloader/Preloader";
 
 function Project() {
 
@@ -34,21 +35,23 @@ function Project() {
   }
 
   const [project, setProject] = useState<TProject>(test);
-
+  const [loding, setLoding] = useState(true);
   useEffect(() => {
     axios
       .get(`http://127.0.0.1:8000/api/project/${id.id}`)
       .then((response) => {
         
         setProject(response.data.data.project);
-        console.log(response.data.data.project.skills);
+        setLoding(false);
       })
       .catch((error) => {
         console.error(error);
       });
   }, [id]);
 
-  return (
+
+  if(loding) return <PreLoader />
+  else return (
     <div className="project">
       <div id="ys-container" className="container">
         <section className="project-section">

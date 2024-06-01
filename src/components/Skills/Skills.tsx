@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import OneSkill from '../OneSkill/OneSkill'
 import axios from 'axios';
 import { TSkill } from '../../types/type';
+import PreLoader from "../Preloader/Preloader";
 
 
 export default function Skills() {
 
     const [skillsData, setSkillsData] = useState<TSkill[]>([]);
-
+    const [loding, setLoding] = useState(true);
     useEffect(() => {
         axios
             .get("http://127.0.0.1:8000/api/skills", {
@@ -17,13 +18,16 @@ export default function Skills() {
             })
             .then((response) => {
                 setSkillsData(response.data.data);
+                setLoding(false);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
 
-    return (
+
+    if(loding) return <PreLoader />
+    else return (
         <>
             <div className="container">
                 <div className="section-title mb-5">

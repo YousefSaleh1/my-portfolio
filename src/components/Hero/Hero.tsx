@@ -8,13 +8,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { THeroDate, THeroSlider } from "../../types/type";
+import PreLoader from "../Preloader/Preloader";
 
 
 export default function Hero() {
 
   const [title, setTitle] = useState('');
   const [heroSliders, setHeroSliders] = useState<THeroSlider[]>([]);
-
+  const [loding, setLoding] = useState(true);
   useEffect(() => {
     axios.get<THeroDate>('http://127.0.0.1:8000/api/hero', {
       headers: {
@@ -25,6 +26,7 @@ export default function Hero() {
         const data = response.data.data;
         setTitle(data.title);
         setHeroSliders(data.hero_sliders);
+        setLoding(false);
       })
       .then(response => { console.log(response) })
       .catch(error => {
@@ -32,7 +34,8 @@ export default function Hero() {
       });
   }, []);
 
-  return (
+  if(loding) return <PreLoader />
+  else return (
     <>
       <div className="container">
         <div className="row">
@@ -62,10 +65,12 @@ export default function Hero() {
                 <FaWhatsappSquare />
               </a>
             </div>
+            <div className="btn-download-container">
             <Link to='http://127.0.0.1:8000/api/download-cv' className="btn rounded-3 download-bottom" >
               <span>Download CV</span>
               <FaDownload />
             </Link>
+            </div>
           </div>
           <div className="col-lg-4 mt-3">
             <SliderImage heroSliders={heroSliders} />
