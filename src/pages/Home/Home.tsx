@@ -3,8 +3,6 @@ import "./Home.css";
 import aboutImage from "./../../assets/about-me.svg";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import WhyMeCard from "../../components/WhyMeCard/WhyMeCard";
-import axios from 'axios';
-import React, { useState } from "react";
 import TrainingElement from "../../components/TrainingElement/TrainingElement";
 import EducationElement from "../../components/EducationElement/EducationElement";
 import Hero from "../../components/Hero/Hero";
@@ -148,13 +146,13 @@ function Home() {
                 </div>
                 <div className="contact-details">
                   <div className="my-name">
-                    <h5>Ahmed Mohammed</h5>
+                    <h5>X1 Team</h5>
                   </div>
                   <div className="my-phone">
                     <p>+963-992546813</p>
                   </div>
                   <div className="my-email">
-                    <p>ahmedmhmmad021@gmail.com</p>
+                    <p>x1team@focal.com</p>
                   </div>
                 </div>
               </div>

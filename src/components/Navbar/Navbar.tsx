@@ -19,6 +19,7 @@ function Navbar() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  
   const handleDynamicScroll = () => {
     const aboutElement = document.getElementById("about-section");
     const skillsElement = document.getElementById("skills-section");
@@ -72,7 +73,7 @@ function Navbar() {
         <div id="ys-container" className="container">
           <a className="nav-icon" href="#">
             <HiCode className="icon" />
-            <span>Ahmed</span>
+            <span>X1</span>
           </a>
           <button className="ys-toggler" onClick={toggleDisplay} type="button">
             <FaBars />
