@@ -1,4 +1,3 @@
-import MeCard from "../MeCard/MeCard";
 import "./WhyMeCard.css";
 
 
