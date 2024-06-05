@@ -78,7 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isActive, toggleDisplay, isDarkMode, 
                                 toggleDisplay()
                                 }}>
                                 {
-                                    isDarkMode ?
+                                    !isDarkMode ?
                                         <>
                                             <FaSun className='nav-link-icon' />
                                             <span className="nav-link-info">Light Mode</span>

@@ -112,6 +112,7 @@
 
 .ys-navbar .nav-info {
   display: flex;
+  align-items: center;
   flex-basis: 100%;
   margin-top: 0 !important;
 }
@@ -175,6 +176,17 @@
 .ys-navbar .nav-info .nav-item .item .nav-link-info {
   display: inline;
   font-size: 1rem !important;
+}
+
+.ys-navbar .nav-info .theme {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ys-navbar .nav-info .theme:hover {
+  background-color: var(--secondary);
 }
 
 @media (max-width: 1200px) {

@@ -162,7 +162,7 @@ function Navbar() {
               </li>
             </ul>
             <div className="theme">
-              {isDarkMode ? (
+              {!isDarkMode ? (
                 <FaSun className="theme-icon" onClick={toggleDarkMode} />
               ) : (
                 <FaMoon className="theme-icon" onClick={toggleDarkMode} />
