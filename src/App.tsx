@@ -7,18 +7,21 @@ import Navbar from './components/Navbar/Navbar';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { AppProvider } from './contexts/AppContext';
 function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes >
-        <Route path='/' element={<Home/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/project/:id' element={<Project/>} />
-      </Routes>
+      <AppProvider>
+        <Navbar />
+        <Routes >
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/project/:id' element={<Project />} />
+        </Routes>
+      </AppProvider>
     </>
-    
+
   )
 }
 

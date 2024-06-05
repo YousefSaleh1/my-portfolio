@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+:root {
+    --font-name-family: 'Dancing Script', cursive;
+    --font-medium-xx-size: 1.25rem;
+    --font-medium-x-size: 1.125rem;
+    --font-medium-size: 1rem;
+    --black: #0e0f13;
+    --skills-gradient: #00000099;
+    --input-form-color: #212529;
+    --secondary: #343a40;
+    --scrollbar-color: #424242;
+    --main-shadow: #6c757d;
+    --overview-layer: #7e7c7c81;
+    --white: #f3f4f6;
+    --placeholder-color: #8e98a1;
+    --primary: #e1e1e1;
+    --focus-color: #ced4da;
+    --hover-color: #d1d1d1;
+    --svg-color: #cfcfcfcc;
+    --active-color: #bcbebf;
+    --active-color-nav: #3b82f6;
+    --active-color-hover-nav: #5ba8e8;
+}
+
+.dark-mode {
+    --white: #0e0f13;
+    --primary: #343a40;
+    --placeholder-color: #495057;
+    --focus-color: #424242;
+    --hover-color: #495057;
+    --black: #f3f4f6;
+    --secondary: #d7d4d4;
+    --input-form-color: #e1e1e1;
+    --skills-gradient: #cfcfcf99;
+    --scrollbar-color: #c2c9cf;
+    --svg-color: #8e98a1;
+    --active-color: #2c3237;
+    --active-color-nav: #197de1;
+    --active-color-hover-nav: #2b8ae8
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.loader-a {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+}
+.container-view{
+    background-color: var(--white);
+    color: var(--black);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    font-size: 2rem;
+}
+.container-view .secondry-text{
+    font-size: 1.2rem;
+}
+.container-view .text-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.loading-page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: linear-gradient(to right, #2c5364 ,#203a43, #0f2027); */
+    background-color: var(--white);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+svg#svg-a{
+    height: 200px !important;
+    width: 200px !important;
+    stroke: var(--black);
+    stroke-width: 6px;
+    fill-opacity: 0;
+    stroke-dasharray: 4500;
+    animation: draw 8s ease;
+}
+@keyframes draw {
+    0%{
+        stroke-dashoffset: 4500;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+.logo-name{
+    color: var(--black);
+    font-size: 16px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+}

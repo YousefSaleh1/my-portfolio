@@ -3,39 +3,16 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { FaWhatsappSquare } from "react-icons/fa";
-import SliderImage from "../Slider/SliderImage";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import SliderImage from "../Slider/SliderImage"; 
 import { Link } from "react-router-dom";
-import { THeroDate, THeroSlider } from "../../types/type";
-import PreLoader from "../Preloader/Preloader";
+import { useAppContext } from "../../contexts/AppContext";
 
 
 export default function Hero() {
 
-  const [title, setTitle] = useState('');
-  const [heroSliders, setHeroSliders] = useState<THeroSlider[]>([]);
-  const [loding, setLoding] = useState(true);
-  useEffect(() => {
-    axios.get<THeroDate>('http://127.0.0.1:8000/api/hero', {
-      headers: {
-        Accept: 'application/json'
-      }
-    })
-      .then(response => {
-        const data = response.data.data;
-        setTitle(data.title);
-        setHeroSliders(data.hero_sliders);
-        setLoding(false);
-      })
-      .then(response => { console.log(response) })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+  const { title, heroSliders } = useAppContext();
 
-  if(loding) return <PreLoader />
-  else return (
+  return (
     <>
       <div className="container">
         <div className="row">
@@ -65,12 +42,10 @@ export default function Hero() {
                 <FaWhatsappSquare />
               </a>
             </div>
-            <div className="btn-download-container">
             <Link to='http://127.0.0.1:8000/api/download-cv' className="btn rounded-3 download-bottom" >
               <span>Download CV</span>
               <FaDownload />
             </Link>
-            </div>
           </div>
           <div className="col-lg-4 mt-3">
             <SliderImage heroSliders={heroSliders} />

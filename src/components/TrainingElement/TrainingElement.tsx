@@ -1,31 +1,10 @@
-
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { TTraining } from "../../types/type";
-import PreLoader from "../Preloader/Preloader";
+import { useAppContext } from "../../contexts/AppContext";
 
 function TrainingElement() {
-  const [trainingData, setTrainingData] = useState<TTraining[]>([]);
-  const [loding, setLoding] = useState(true);
-  useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/trainings", {
-        headers: {
-          Accept: "application/json"
-        }
-      })
-      .then((response) => {
-        setTrainingData(response.data.data);
-        setLoding(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
+  const { trainingData } = useAppContext();
 
-  if(loding) return <PreLoader />
-  else return (
+  return (
     <>
       {trainingData?.map((training, index) => (
         <div key={index} className="trainig-element">
@@ -60,6 +39,7 @@ function TrainingElement() {
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       ))}

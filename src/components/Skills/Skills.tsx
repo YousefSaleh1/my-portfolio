@@ -1,35 +1,16 @@
-import React, { useEffect, useState } from 'react'
 import OneSkill from '../OneSkill/OneSkill'
-import axios from 'axios';
 import { TSkill } from '../../types/type';
-import PreLoader from "../Preloader/Preloader";
+import { useAppContext } from '../../contexts/AppContext';
 
 
 export default function Skills() {
 
-    const [skillsData, setSkillsData] = useState<TSkill[]>([]);
-    const [loding, setLoding] = useState(true);
-    useEffect(() => {
-        axios
-            .get("http://127.0.0.1:8000/api/skills", {
-                headers: {
-                    Accept: "application/json"
-                }
-            })
-            .then((response) => {
-                setSkillsData(response.data.data);
-                setLoding(false);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
+    const { skillsData } = useAppContext();
 
-
-    if(loding) return <PreLoader />
-    else return (
+    return (
         <>
             <div className="container">
+
                 <div className="section-title mb-5">
                     <h1>Skills</h1>
                 </div>
@@ -37,7 +18,6 @@ export default function Skills() {
                 {skillsData?.map((skill: TSkill, index) => {
                     return (
                         <div key={index} className="skills-tag">
-
                             <div className="title-with-line">
                                 <div className="before-line"></div>
                                 <h2>{skill.skill_name}</h2>

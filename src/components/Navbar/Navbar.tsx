@@ -1,11 +1,7 @@
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiCode } from "react-icons/hi";
-import { FaMoon } from "react-icons/fa";
-import { FaSun } from "react-icons/fa";
-import { FaCube, FaLink } from "react-icons/fa6";
-import { FaCogs, FaHome, FaUserAlt } from "react-icons/fa";
-import { FaBars } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars, FaCube, FaLink, FaCogs, FaHome, FaUserAlt } from "react-icons/fa";
 import Sidebar from "../Sidebar/Sidebar";
 
 function Navbar() {
@@ -19,7 +15,7 @@ function Navbar() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
+
   const handleDynamicScroll = () => {
     const aboutElement = document.getElementById("about-section");
     const skillsElement = document.getElementById("skills-section");
@@ -51,19 +47,23 @@ function Navbar() {
     }
   };
 
-  window.addEventListener("scroll", handleDynamicScroll);
+  useEffect(() => {
+    window.addEventListener("scroll", handleDynamicScroll);
+    return () => {
+      window.removeEventListener("scroll", handleDynamicScroll);
+    };
+  }, []);
 
   const handleItemClick = (itemName: string) => {
     setActiveItem(itemName);
   };
 
-  const toggleDarkMode = (): void => {
+  const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    const rootElement = document.documentElement;
-    rootElement.classList.toggle("dark-mode");
+    document.documentElement.classList.toggle("dark-mode");
   };
 
-  const toggleDisplay = (): void => {
+  const toggleDisplay = () => {
     setSideBarActive(!sideBarActive);
   };
 
@@ -140,7 +140,7 @@ function Navbar() {
                     activeItem === "projects" ? "active-nav" : ""
                   }`}
                 >
-                  <FaCube className="nav-link-icon" />
+                  <FaCube className="nav-link-icon"/>
                   <span className="nav-link-info">Projects</span>
                 </a>
               </li>
@@ -152,7 +152,7 @@ function Navbar() {
                 }}
               >
                 <a
-                  className={`nav-link  ${
+                  className={`nav-link ${
                     activeItem === "contact" ? "active-nav" : ""
                   }`}
                 >
@@ -161,25 +161,17 @@ function Navbar() {
                 </a>
               </li>
             </ul>
-            <ul className="nav-item">
-              <li className="item">
-                <div className="nav-link" onClick={toggleDarkMode}>
-                  {isDarkMode ? <FaMoon /> : <FaSun />}
-                </div>
-              </li>
-            </ul>
+            <div className="theme">
+              {isDarkMode ? (
+                <FaSun className="theme-icon" onClick={toggleDarkMode} />
+              ) : (
+                <FaMoon className="theme-icon" onClick={toggleDarkMode} />
+              )}
+            </div>
           </div>
         </div>
       </nav>
-      {}
-      {sideBarActive && (
-        <Sidebar
-          handleItemClick={handleItemClick}
-          toggleDisplay={toggleDisplay}
-          toggleDarkMode={toggleDarkMode}
-          isDarkMode={isDarkMode}
-        />
-      )}
+      {sideBarActive && <Sidebar isActive={sideBarActive} toggleDisplay={toggleDisplay} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} activeItem={activeItem} handleItemClick={handleItemClick} />}
     </>
   );
 }

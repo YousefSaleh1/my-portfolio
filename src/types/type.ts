@@ -1,3 +1,13 @@
+export type TAppContextProps = {
+    educationData: TEducation[];
+    title: string;
+    heroSliders: THeroSlider[];
+    projects: TProject[];
+    skillsData: TSkill[];
+    trainingData: TTraining[];
+    loading: boolean;
+}
+
 export type TEducation = {
     id: number;
     title: string;
@@ -12,9 +22,11 @@ export type THeroSlider = {
 }
 
 export type THeroDate = {
-    title: string;
-    my_cv: string;
-    hero_sliders: THeroSlider[];
+    data: {
+        title: string;
+        my_cv: string;
+        hero_sliders: THeroSlider[];
+    }
 }
 
 export type TSkillItem = {
