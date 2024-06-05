@@ -1,146 +1,82 @@
-import { useState } from 'react';
-import { IoMdClose } from 'react-icons/io'
-import { FaMoon } from "react-icons/fa";
-import { FaSun } from "react-icons/fa";
-import './Sidebar.css'
-import { FaCube, FaLink } from "react-icons/fa6";
-import { FaCogs, FaHome, FaUserAlt } from "react-icons/fa";
-export default function Sidebar({ toggleDisplay, toggleDarkMode, isDarkMode, handleItemClick }) {
-    const [activeItem, setActiveItem] = useState("home");
+import "./Sidebar.css";
+import { FaHome, FaUserAlt, FaCogs, FaCube, FaLink, FaSun, FaMoon } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
-    const handleScroll = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-        }
-    };
-    const handleDynamicScroll = () => {
-        const aboutElement = document.getElementById("about-section");
-        const skillsElement = document.getElementById("skills-section");
-        const projectsElement = document.getElementById("projects-section");
-        const contactElement = document.getElementById("contact-section");
-
-        if (aboutElement) {
-            const about = aboutElement.offsetTop;
-            if (window.pageYOffset < about) {
-                setActiveItem("home");
-            } else if (skillsElement) {
-                const skills = skillsElement.offsetTop;
-                if (window.pageYOffset < skills) {
-                    setActiveItem("about");
-                } else if (projectsElement) {
-                    const projects = projectsElement.offsetTop;
-                    if (window.pageYOffset < projects) {
-                        setActiveItem("skills");
-                    } else if (contactElement) {
-                        const contact = contactElement.offsetTop;
-                        if (window.pageYOffset < contact) {
-                            setActiveItem("projects");
-                        } else {
-                            setActiveItem("contact");
-                        }
-                    }
-                }
-            }
-        }
-    };
-
-    window.addEventListener("scroll", handleDynamicScroll);
+interface SidebarProps {
+    isActive: boolean;
+    toggleDisplay: () => void;
+    isDarkMode: boolean;
+    toggleDarkMode: () => void;
+    activeItem: string;
+    handleItemClick: (itemName: string) => void;
+}
+const Sidebar: React.FC<SidebarProps> = ({ isActive, toggleDisplay, isDarkMode, toggleDarkMode, activeItem, handleItemClick }) => {
 
     return (
         <>
-            <div className="background-opacity"></div>
-            <div className='sidebar'>
+            <div className={`sidebar ${isActive ? "active" : ""}`}>
                 <div className="sidebar-header">
                     <button onClick={toggleDisplay}>
                         <IoMdClose className='icon' />
                     </button>
                 </div>
                 <div className="sidebar-content">
-                    <ul className="items">
-
-                        <li
-                            className='item'
-                            onClick={() => {
-                                toggleDisplay();
-                                handleItemClick("home");
-                                handleScroll("hero-section");
-                            }}
-                        >
-                            <a
-                                href="#"
-                                className={`nav-link  ${activeItem === 'home' ? 'active-nav' : ''}`}
+                    <ul className="sidebar-items">
+                        <li className="sidebar-item" onClick={() => {
+                            handleItemClick('home')
+                            toggleDisplay()
+                        }}>
+                            <a href="#hero-section"
+                                className={`nav-link  ${activeItem === "home" ? 'active-nav' : ''}`}
                             >
-                                <FaHome className="nav-link-icon" />
-                                <span className="nav-link-info">Home</span>
+                                <FaHome className="nav-link-icon" /> Home
                             </a>
                         </li>
-                        <li
-                            className='item'
-                            onClick={() => {
-                                toggleDisplay();
-                                handleItemClick("about");
-                                handleScroll("about-section");
-                            }}
-                        >
-                            <a
-                                href="#"
-                                className={`nav-link  ${activeItem === 'about' ? 'active-nav' : ''}`}
+                        <li className="sidebar-item" onClick={() => {
+                            handleItemClick('about')
+                            toggleDisplay()
+                        }}>
+                            <a href="#about-section"
+                                className={`nav-link  ${activeItem === "about" ? 'active-nav' : ''}`}
                             >
-                                <FaUserAlt className="nav-link-icon" />
-                                <span className="nav-link-info">About</span>
+                                <FaUserAlt className="nav-link-icon" /> About
                             </a>
                         </li>
-                        <li
-                            className='item'
-                            onClick={() => {
-                                toggleDisplay();
-                                handleItemClick("skills");
-                                handleScroll("skills-section");
-                            }}
-                        >
-                            <a
-                                href="#"
+                        <li className="sidebar-item" onClick={() => {
+                            handleItemClick('skills')
+                            toggleDisplay()
+                        }}>
+                            <a href="#skills-section"
                                 className={`nav-link  ${activeItem === 'skills' ? 'active-nav' : ''}`}
                             >
-                                <FaCogs className="nav-link-icon" />
-                                <span className="nav-link-info">Skills</span>
+                                <FaCogs className="nav-link-icon" /> Skills
                             </a>
                         </li>
-                        <li
-                            className='item'
-                            onClick={() => {
-                                toggleDisplay();
-                                handleItemClick("projects");
-                                handleScroll("projects-section");
-                            }}
-                        >
-                            <a
-                                href="#"
+                        <li className="sidebar-item" onClick={() => {
+                            handleItemClick('projects')
+                            toggleDisplay()
+                        }}>
+                            <a href="#projects-section"
                                 className={`nav-link  ${activeItem === 'projects' ? 'active-nav' : ''}`}
                             >
-                                <FaCube className="nav-link-icon" />
-                                <span className="nav-link-info">Projects</span>
+                                <FaCube className="nav-link-icon" /> Projects
                             </a>
                         </li>
-                        <li
-                            className='item'
-                            onClick={() => {
-                                toggleDisplay();
-                                handleItemClick("contact");
-                                handleScroll("contact-section");
-                            }}
-                        >
-                            <a
-                                href="#"
+                        <li className="sidebar-item" onClick={() => {
+                            handleItemClick('contact')
+                            toggleDisplay()
+                        }}>
+                            <a href="#contact-section"
                                 className={`nav-link  ${activeItem === 'contact' ? 'active-nav' : ''}`}
                             >
-                                <FaLink className="nav-link-icon" />
-                                <span className="nav-link-info">Contact</span>
+                                <FaLink className="nav-link-icon" /> Contact
                             </a>
                         </li>
-                        <li className="item">
-                            <div className="nav-link" onClick={toggleDarkMode}>
+                        <li className="sidebar-item">
+                            <div className="nav-link" onClick={()=>{
+                                toggleDarkMode()
+                                toggleDisplay()
+                                }}>
                                 {
                                     isDarkMode ?
                                         <>
@@ -159,5 +95,7 @@ export default function Sidebar({ toggleDisplay, toggleDarkMode, isDarkMode, han
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
+
+export default Sidebar;

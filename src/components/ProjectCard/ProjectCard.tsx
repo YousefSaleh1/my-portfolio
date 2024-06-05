@@ -1,33 +1,19 @@
 import "./ProjectCard.css";
 import { IoIosLink } from "react-icons/io";
-import { Link ,useNavigate} from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { TProject } from "../../types/type";
-import PreLoader from "../Preloader/Preloader";
+import { Link, useNavigate } from "react-router-dom";
+import { useAppContext } from "../../contexts/AppContext";
 
 function ProjectCard() {
 
-  const [projects, setProjects] = useState<TProject[]>([]);
-  const [loding, setLoding] = useState(true);
-  const navigate = useNavigate();
-  useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/projects")
-      .then((response) => {
-        setProjects(response.data.data);
-        setLoding(false);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-const handleNavigate = (id:number)=>{
-navigate(`/project/${id}`)
-}
+  const { projects } = useAppContext();
 
-  if(loding) return <PreLoader />
-  else return (
+  const navigate = useNavigate();
+
+  const handleNavigate = (id: number) => {
+    navigate(`/project/${id}`)
+  }
+
+  return (
     <>
 
       {projects?.map((project, index) => (
