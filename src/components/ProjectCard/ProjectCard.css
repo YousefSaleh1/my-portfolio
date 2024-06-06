@@ -161,3 +161,8 @@
   height: 100px;
   background-color: rgb(117, 37, 37);
 }
+@media (max-width: 767px){
+  .project-card-component .card .card-body p.card-text {
+    height: 110px !important;
+  }
+}

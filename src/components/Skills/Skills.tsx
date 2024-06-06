@@ -1,6 +1,7 @@
 import OneSkill from '../OneSkill/OneSkill'
 import { TSkill } from '../../types/type';
 import { useAppContext } from '../../contexts/AppContext';
+import SectionTitleAnimation from '../animation/SectionTitleAnimation';
 
 
 export default function Skills() {
@@ -12,7 +13,9 @@ export default function Skills() {
             <div className="container">
 
                 <div className="section-title mb-5">
-                    <h1>Skills</h1>
+                    <SectionTitleAnimation>
+                        <h1>Skills</h1>
+                    </SectionTitleAnimation>
                 </div>
 
                 {skillsData?.map((skill: TSkill, index) => {
