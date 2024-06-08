@@ -44,7 +44,7 @@
 }
 
 .project-section {
-  margin-top: 3rem !important;
+  padding-top: 2rem !important;
 }
 
 .project-section .project-title {
@@ -168,4 +168,41 @@
 
 .project-section .row .project-image .overview:hover .overview-layer {
   opacity: 1;
+}
+.back-button{
+  width: 40px;
+  height: 40px;
+  color: var(--black);
+  border: 2px solid var(--main-shadow);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 100px;
+  animation: updown 2.5s infinite 4s ;
+}
+.back-button svg{
+  color: var(--black);
+  font-size: 2rem;
+}
+@keyframes updown {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(25px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 767px){
+  .back-button{
+    right: 40px;
+  }
+  .back-button svg{
+    color: var(--black);
+    font-size: 1.7rem;
+  }
 }
