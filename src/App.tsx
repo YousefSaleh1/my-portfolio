@@ -15,9 +15,9 @@ function App() {
       <AppProvider>
         <Navbar />
         <Routes >
-          <Route path='/my-portfolio/' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/my-portfolio/project/:id' element={<Project />} />
+          <Route path='/project/:id' element={<Project />} />
         </Routes>
       </AppProvider>
     </>
