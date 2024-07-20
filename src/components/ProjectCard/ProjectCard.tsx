@@ -3,7 +3,7 @@ import { IoIosLink } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 import ProjectCardAnimation from "../animation/ProjectCardAnimation";
-import { delay } from 'framer-motion';
+// import { delay } from 'framer-motion';
 
 function ProjectCard() {
   const { projects } = useAppContext();

@@ -13,7 +13,7 @@ import SectionTitleAnimation from "../../components/animation/SectionTitleAnimat
 import LeftAnimation from "../../components/animation/LeftAnimation";
 import ScaleAnimation from "../../components/animation/ScaleAnimation";
 import WhyCardAnimation from "../../components/animation/WhyCardAnimation";
-import { delay } from "framer-motion";
+// import { delay } from "framer-motion";
 function Home() {
   var delay: number = 0;
   const data = [

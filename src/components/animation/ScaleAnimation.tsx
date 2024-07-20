@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useAnimation, motion, AnimationControls, delay } from 'framer-motion';
+import { useAnimation, motion, AnimationControls } from 'framer-motion';
 
 interface TScaleAnimation {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ function ScaleAnimation ({ children,delayValue, ...props }:TScaleAnimation) {
   const controls: AnimationControls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.1,
-    onChange : (inView, entry) => {
+    onChange : (inView) => {
         if (inView) {
           controls.start('visible');
         } else {
@@ -42,6 +42,6 @@ function ScaleAnimation ({ children,delayValue, ...props }:TScaleAnimation) {
       {children}
     </motion.div>
   );
-};
+}
 
 export default ScaleAnimation;

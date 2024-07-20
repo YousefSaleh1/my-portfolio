@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion, AnimationControls} from 'framer-motion';
 
@@ -11,7 +11,7 @@ function WhyCardAnimation ({ children,delayValue, ...props }:TCardProps) {
   const controls: AnimationControls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.1,
-    onChange : (inView, entry) => {
+    onChange : (inView) => {
         if (inView) {
           controls.start('visible');
         } else {
@@ -42,6 +42,6 @@ function WhyCardAnimation ({ children,delayValue, ...props }:TCardProps) {
       {children}
     </motion.div>
   );
-};
+}
 
 export default WhyCardAnimation;

@@ -1,13 +1,13 @@
 import { HiCode } from "react-icons/hi";
 import "./Project.css";
-import { FaArrowLeft, FaArrowRight, FaLink } from "react-icons/fa6";
+import {  FaArrowRight, FaLink } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TParams, TProject } from "../../types/type";
 import PreLoader from "../../components/Preloader/Preloader";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import ScaleAnimation from "../../components/animation/ScaleAnimation";
 import SectionTitleAnimation from "../../components/animation/SectionTitleAnimation";
 

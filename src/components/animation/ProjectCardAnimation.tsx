@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useAnimation, motion, AnimationControls, delay } from 'framer-motion';
+import { useAnimation, motion, AnimationControls } from 'framer-motion';
 
 interface TProjectCardAnimationProps {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ function ProjectCardAnimation ({ children,delayValue, ...props }:TProjectCardAni
   const controls: AnimationControls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.1,
-    onChange : (inView, entry) => {
+    onChange : (inView) => {
         if (inView) {
           controls.start('visible');
         } else {
@@ -41,6 +41,6 @@ function ProjectCardAnimation ({ children,delayValue, ...props }:TProjectCardAni
       {children}
     </motion.div>
   );
-};
+}
 
 export default ProjectCardAnimation;
